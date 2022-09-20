@@ -132,6 +132,26 @@ const App = () => {
     });
   }
 
+  document.getElementById('add_to_cart').addEventListener('click',() =>{
+    if(!pincode){
+      setIsOpen(true)
+    } else if((!pincode && !status_code) || (pincode && status_code == '404')){
+      document.getElementById("pin-input").focus()
+    } else {
+      addToCart();
+    }
+  })
+
+  document.getElementById('buyNowCustomId').addEventListener('click',() =>{
+    if(!pincode){
+      setIsOpen(true)
+    } else if((!pincode && !status_code) || (pincode && status_code == '404')){
+      document.getElementById("pin-input").focus()
+    } else {
+      buyNow();
+    }
+  })
+
   useEffect(()=>{
     if(status_code == '200') {
       window.localStorage.setItem('pincode',pincode);
@@ -146,7 +166,7 @@ const App = () => {
         clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
     </div>
-      <button className="product__submit__add"  onClick={() => {
+      {/* <button className="product__submit__add"  onClick={() => {
         if(!pincode){
           setIsOpen(true)
         } else if( !status_code || status_code == '404' ){
@@ -156,7 +176,7 @@ const App = () => {
         }
         }} >
           Add to cart
-      </button>
+      </button> */}
       <br/>
       <button id="buyNowCustomId" onClick={() => {
         if(!pincode){
