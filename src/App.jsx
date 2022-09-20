@@ -85,7 +85,6 @@ const App = () => {
     } else {
       document.getElementById('pin-input').focus();
     }
-
   }
 
   useEffect(()=>{
@@ -152,7 +151,7 @@ const App = () => {
     
         <PincodeSection pincode_value={modal_pincode} delivery_date_check={modal_delivery_date} status_code_check={modal_status_code} 
         clicked_check={modal_clicked} link_check={modal_link} SetPincode_check={SetModalPincode} SetClicked_check={SetModalClicked}
-        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true}/>
+        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} />
       </Modal>
     </div>
     </>
