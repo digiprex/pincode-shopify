@@ -3,7 +3,10 @@ import Amazon from "../images/amazon.png";
 import "react-responsive-modal/styles.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-const PincodeSection = ({pincode,delivery_date,status_code,clicked,link,SetPincode,SetClicked,verifyPincodeDeliveribility,popup}) => {
+const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,clicked_check,
+    link_check,SetPincode_check,SetClicked_check,verifyPincodeDeliveribility_check,popup_check}) => {
+
+  const brand = process.env.REACT_APP_BRAND == 'Mars' ? 'mars':'saturn'
   const isValidInput = (e) => {
     
       if (e.keyCode === 13) {
@@ -44,29 +47,30 @@ const PincodeSection = ({pincode,delivery_date,status_code,clicked,link,SetPinco
                             minLength="6"
                             maxLength="6"
                             placeholder="Enter your pincode"
-                            value={pincode}
+                            value={pincode_value}
                             name="pincode"
-                            onChange={(e) => SetPincode(e.target.value)}
+                            onChange={(e) => SetPincode_check(e.target.value)}
                             onKeyDown={isValidInput}
                             autoComplete='off'
+                            id="pin-input"
                         />
                         <div
                             className={
-                                (pincode > 100000)
+                                (pincode_value > 100000)
                                     ? "submit-button submit-button-active"
                                     : "submit-button"
                             }
                             id="pincode-submit"
                             onClick={
-                                () => {SetClicked(true) ;verifyPincodeDeliveribility()}
+                                () => {SetClicked_check(true) ;verifyPincodeDeliveribility_check(pincode_value,status_code_check,popup_check)}
                             }
                         >
-                            {clicked ? <span>
+                            {(clicked_check && status_code_check == "404")? <span>
                                 Change  
                             </span> : <span>Submit</span>}
                         </div>
                      </div>
-                     { (pincode>10000 && clicked && status_code == "200") && <div className="estimated-days">
+                     { (pincode_value>10000 && clicked_check && status_code_check == "200") && <div className="estimated-days">
                         <div style={{ display: "flex" }}>
                             <div className="estimated-days-start">
                                 *
@@ -78,15 +82,15 @@ const PincodeSection = ({pincode,delivery_date,status_code,clicked,link,SetPinco
                         </div>
 
                         <span className="estimation-date">
-                            {delivery_date}
+                            {delivery_date_check}
                         </span>
                     </div>
                   }
-                     { (popup && status_code == "200") ? 
+                     { (popup_check && status_code_check == "200") ? 
                      <div className={"proceed-button"} >
                       <span>Proceed</span>
                     </div> : null }
-                    { (pincode>100000 && clicked && status_code == "404") &&
+                    { (pincode_value>100000 && clicked_check && status_code_check == "404") &&
                       <div>
                       <div className="estimated-days">
                           <div
@@ -96,11 +100,6 @@ const PincodeSection = ({pincode,delivery_date,status_code,clicked,link,SetPinco
                                   *
                               </div>
                               <div className="days-estimation non-servicable-pin">
-                                  {/* {
-                                      this.state.serviceableData.text.split(
-                                          "\n"
-                                      )[0]
-                                  } */}
                                   We are currently not operating in this location
                                   <br />
                                   Try another pincode.
@@ -109,16 +108,12 @@ const PincodeSection = ({pincode,delivery_date,status_code,clicked,link,SetPinco
                       </div>
                       <div className="available-in-amazon">
                               <div className="amazon-info">
-                                  { process.env.REACT_APP_BRAND == 'Mars' ? 
                                     <div className="message-div">
-                                    But you can buy our products from mars by ghc store on Amazon
-                                    </div> : 
-                                    <div className="message-div">
-                                    But you can buy our products from saturn by ghc store on Amazon
-                                    </div>}
+                                    But you can buy our products from {brand} by ghc store on Amazon
+                                    </div> 
                                   <div className="buy-button">
                                       <a
-                                          href={link}
+                                          href={link_check}
                                           rel="noopener noreferrer"
                                           target="_blank"
                                       >
