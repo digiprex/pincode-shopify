@@ -9,7 +9,7 @@ import "react-responsive-modal/styles.css";
 const App = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [pincode,Set_pincode] =  window.localStorage.getItem('pincode') || useState("");
+  const [pincode,Set_pincode] =  useState(window.localStorage.getItem('pincode') || "");
   const [delivery_date,Set_delivery_date]=useState("");
   const [status_code,Set_status_code]= useState("");
   const [clicked,Set_clicked] = useState(false);
@@ -113,8 +113,6 @@ const App = () => {
   return (
     <>
     <div className="App">
-      {status_code}
-      {modal_status_code}
     <PincodeSection pincode_value={pincode} delivery_date_check={delivery_date} status_code_check={status_code} 
         clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
