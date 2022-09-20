@@ -104,15 +104,15 @@ const App = () => {
     );
   },[])
 
-  const addToCart = () => {
+  const buyNow = () => {
     alert('add to cart');
   }
 
-  const buyNow = async() => {
+  const addToCart = async() => {
     let formData = {
       'items': [{
-       'id': parseInt(document.getElementById('js-qty-').value),
-       'quantity': document.getElementById("shopify-product-id2").value
+       'id': document.getElementById("shopify-product-id2").value,
+       'quantity': parseInt(document.getElementById('js-qty-').value),
       }]
      };
 
@@ -142,6 +142,7 @@ const App = () => {
   return (
     <>
     <div className="App">
+    <input type="text" id="js-qty-" class="js-qty__num quantity__input" value="1" min="1" aria-label="quantity" pattern="[0-9]*" name="quantity"/>
     <PincodeSection pincode_value={pincode} delivery_date_check={delivery_date} status_code_check={status_code} 
         clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
