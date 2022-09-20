@@ -120,7 +120,7 @@ const App = () => {
       body: JSON.stringify(formData)
     })
     .then(response => {
-      alert('success');
+      return response.json();
     })
     .catch((error) => {
       alert('error')
