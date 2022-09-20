@@ -105,7 +105,9 @@ const App = () => {
   },[])
 
   const buyNow = () => {
-    alert('buy now');
+    let count = parseInt(document.getElementById('js-qty-').value);
+    let varientId = document.getElementById("shopify-product-id2").value;
+    window.location.href = `/cart/${varientId}:${count}`
   }
 
   const addToCart = async() => {
@@ -125,7 +127,6 @@ const App = () => {
     })
     .then(response => {
       return response.json();
-      // alert('success');
     })
     .catch((error) => {
       alert('error')
@@ -136,12 +137,12 @@ const App = () => {
     if(!pincode){
       setIsOpen(true)
     } else if((!pincode && !status_code) || (pincode && status_code == '404')){
-      document.getElementById("pin-input").focus()
+      document.getElementById("pin-input").focus() 
     } else {
       addToCart();
     }
   })
-
+ 
   document.getElementById('buyNowCustomId').addEventListener('click',() =>{
     if(!pincode){
       setIsOpen(true)
