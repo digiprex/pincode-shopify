@@ -142,7 +142,6 @@ const App = () => {
   return (
     <>
     <div className="App">
-    <input type="hidden" id="js-qty-" class="js-qty__num quantity__input" value="1" min="1" aria-label="quantity" pattern="[0-9]*" name="quantity"/>
     <PincodeSection pincode_value={pincode} delivery_date_check={delivery_date} status_code_check={status_code} 
         clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
