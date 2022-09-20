@@ -6,6 +6,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,clicked_check,
     link_check,SetPincode_check,SetClicked_check,verifyPincodeDeliveribility_check,popup_check}) => {
 
+  console.log(popup_check && status_code_check == "200",'status');
   const brand = process.env.REACT_APP_BRAND == 'Mars' ? 'mars':'saturn'
   const isValidInput = (e) => {
     
@@ -65,9 +66,9 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                                 () => {SetClicked_check(true) ;verifyPincodeDeliveribility_check(pincode_value,status_code_check,popup_check)}
                             }
                         >
-                            {(clicked_check && status_code_check == "404")? <span>
-                                Change  
-                            </span> : <span>Submit</span>}
+                            {(clicked_check && pincode_value.length==6)? 
+                            <span>Change</span> : 
+                            <span>Submit</span>}
                         </div>
                      </div>
                      { (pincode_value>10000 && clicked_check && status_code_check == "200") && <div className="estimated-days">
@@ -86,8 +87,8 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                         </span>
                     </div>
                   }
-                     { (popup_check && status_code_check == "200") ? 
-                     <div className={"proceed-button"} >
+                     { (popup_check) ? 
+                     <div className="proceed-button" >
                       <span>Proceed</span>
                     </div> : null }
                     { (pincode_value>100000 && clicked_check && status_code_check == "404") &&

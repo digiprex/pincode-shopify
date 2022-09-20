@@ -153,6 +153,8 @@
         position: relative;
         transition-duration: 0.4s;
         overflow: hidden;
+        background-color: var(--color-light);
+        cursor: not-allowed;
     }
 
     .pincode-secton-main-container
@@ -202,12 +204,10 @@
     .proceed-button {
     width: 30%;
     height: 40px;
-    background-color: var(--color-light);
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: not-allowed;
 }
 
 .pincode-secton-main-container
@@ -463,10 +463,14 @@
     .right-upper
     .pincode
     .proceed-button {
-    background-color: var(--color-dark);
-    width: 100%;
+    background-color: var(--color-dark) !important;
+    width: 100% !important;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.proceed-button {
+    width: 100% !important;
 }
 
 @media only screen and (max-width: 1025px) {

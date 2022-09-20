@@ -43,8 +43,8 @@ const App = () => {
   }
 
   const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check) => {
-    console.log(status_code_check,popup_check,'clicked button');
-    if(status_code_check != '404'){
+    // if(status_code_check != '404'){
+      if(!clicked){
       let data = JSON.stringify({
         "pincode": pincode_to_test,
         "brand": process.env.REACT_APP_BRAND
@@ -84,6 +84,8 @@ const App = () => {
       }
     } else {
       document.getElementById('pin-input').focus();
+      SetClicked(false);
+      SetPincode('');
     }
   }
 
@@ -102,11 +104,33 @@ const App = () => {
     );
   },[])
 
+  const buyNow = () => {
+    let formData = {
+      'items': [{
+       'id': document.getElementById("shopify-product-id2").value,
+       'quantity': parseInt(document.getElementsByClassName("js-qty__num quantity__input")[0].value)}]
+     };
+
+     fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      alert('success');
+    })
+    .catch((error) => {
+      alert('error')
+    });
+  }
+
   useEffect(()=>{
     if(status_code == '200') {
       window.localStorage.setItem('pincode',pincode);
     }
-  },[pincode] )
+  },[pincode])
 
 
   return (
@@ -134,7 +158,7 @@ const App = () => {
         } else if( !status_code || status_code == '404' ){
           document.getElementById("pin-input").focus()
         } else {
-          alert('buy now')
+          buyNow();
         }
         }}>
           Buy now
