@@ -104,6 +104,10 @@ const App = () => {
     );
   },[])
 
+  const addToCart = () => {
+    alert('add to cart');
+  }
+
   const buyNow = async() => {
     let formData = {
       'items': [{
@@ -120,8 +124,8 @@ const App = () => {
       body: JSON.stringify(formData)
     })
     .then(response => {
-      // return response.json();
-      alert('success');
+      return response.json();
+      // alert('success');
     })
     .catch((error) => {
       alert('error')
@@ -148,7 +152,7 @@ const App = () => {
         } else if( !status_code || status_code == '404' ){
           document.getElementById("pin-input").focus()
         } else {
-          alert('add to cart')
+          addToCart();
         }
         }} >
           Add to cart
