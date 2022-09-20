@@ -1,0 +1,487 @@
+.pincode-secton-main-container {
+    width: 100%;
+    margin-top: 35px;
+}
+
+.pincode-secton-main-container .cart-body-right .cart-body-right-container {
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .deliver-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .deliver-details
+    .map-icon {
+    width: 26px;
+    height: 26px;
+    background-color: rgba(254, 130, 118, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .deliver-details
+    .map-icon
+    .fa-map-icon {
+    color: var(--color-dark);
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .deliver-details
+    span:nth-child(2) {
+    font-family: "Harmonia Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 21.09px;
+    color: #000;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .deliver-details
+    :last-child
+    span {
+    color: #ea2c2c;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .pincode-validation-input {
+    width: 65%;
+    border: none;
+    outline: none;
+    padding: 0 12px;
+    font-size: 16px;
+    box-shadow: none;
+    margin-right: 5%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .pincode-validation-input::placeholder {
+    color: #a9a9a9;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .pincode-validation-input:focus {
+    border-color: var(--color-dark);
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .submit-button,
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .proceed-button {
+    width: 30%;
+    height: 40px;
+    background-color: var(--color-light);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: not-allowed;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .submit-button
+    span,
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .proceed-button
+    span {
+    font-family: "Harmonia Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #fff;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .submit-button.submit-button-active {
+    background-color: var(--color-dark);
+    cursor: pointer;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .pincode
+    .estimated-days {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .pincode
+    .estimated-days
+    .days-estimation {
+    font-family: "Harmonia Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .pincode
+    .estimated-days
+    .days-estimation.non-servicable-pin {
+    color: #ea2c2c;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .pincode
+    .estimated-days
+    .estimated-days-start {
+    color: red;
+    margin-right: 3px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .pincode
+    .estimated-days
+    .estimation-date {
+    font-family: "Harmonia Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #00cc6a;
+    margin-left: 10px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon {
+    width: 100%;
+    height: auto;
+    background-color: #eafff5;
+    border: 1px solid #00cc6a;
+    border-radius: 10px;
+    margin-top: 18px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon
+    .amazon-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon
+    .amazon-info
+    .message-div {
+    text-align: center;
+    padding: 10px;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon
+    .amazon-info
+    .message-div
+    .serviceable-message {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 14px;
+    color: #000;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon
+    .buy-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 20px 0;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon
+    .buy-button
+    a {
+    text-decoration: none;
+    width: 262px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 3px 0 6px 0;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon
+    .buy-button
+    a
+    span {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 23.44px;
+    color: #fff;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .available-in-amazon
+    .buy-button
+    a
+    .amazon-logo {
+    width: 49px;
+    height: 18px;
+    margin-left: 6px;
+    margin-top: 12px;
+}
+
+.disable-button {
+    cursor: not-allowed;
+    background-color: var(--color-light) !important;
+}
+
+
+.pincode-popup-main-container {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.43);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.pincode-popup-main-container .popup-container {
+    width: 35%;
+    position: relative;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
+}
+
+.pincode-popup-main-container
+    .popup-container
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container {
+    box-shadow: none;
+    padding: 0;
+}
+
+.pincode-popup-main-container
+    .popup-container
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+    padding-top: 0;
+}
+
+.pincode-popup-main-container .popup-container .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.pincode-popup-main-container
+    .popup-container
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .proceed-button {
+    background-color: var(--color-dark);
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1025px) {
+    .pincode-popup-main-container .popup-container {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 920px) {
+    .pincode-popup-main-container .popup-container {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .pincode-popup-main-container .popup-container {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .pincode-popup-main-container .popup-container {
+        width: 90%;
+    }
+
+    .pincode-popup-main-container
+        .popup-container
+        .pincode-secton-main-container
+        .cart-body-right
+        .cart-body-right-container
+        .right-upper
+        .pincode
+        .pin-input {
+        flex-direction: column;
+    }
+
+    .pincode-popup-main-container
+        .popup-container
+        .pincode-secton-main-container
+        .cart-body-right
+        .cart-body-right-container
+        .right-upper
+        .pincode
+        .pin-input
+        .pincode-validation-input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .pincode-popup-main-container
+        .popup-container
+        .pincode-secton-main-container
+        .cart-body-right
+        .cart-body-right-container
+        .right-upper
+        .pincode
+        .pin-input
+        .submit-button {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

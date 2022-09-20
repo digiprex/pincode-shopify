@@ -1,0 +1,51 @@
+{
+  "name": "pincode",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-responsive-modal": "^6.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "local:mars-prod-win": "copy .env.mars.production .env /Y && react-scripts start",
+    "local:saturn-prod-win": "copy .env.saturn.production .env /Y && react-scripts start",
+    "local:staging-win": "copy .env.staging .env /Y && react-scripts start",
+    "build:mars-prod-win": "copy .env.mars.production .env.production /Y && react-scripts build",
+    "build:saturn-prod-win": "copy .env.saturn.production .env.production /Y && react-scripts build",
+    "local:staging-linux": "cp .env.staging .env && react-scripts start",
+    "build:mars-prod-linux": "cp .env.mars.production .env.production && react-scripts build",
+    "build:saturn-prod-linux": "cp .env.saturn.production .env.production && react-scripts build",
+    "local:mars-prod-linux": "cp .env.mars.production .env && react-scripts start",
+    "local:saturn-prod-linux": "cp .env.saturn.production .env && react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
