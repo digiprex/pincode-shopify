@@ -104,7 +104,7 @@ const App = () => {
     );
   },[])
 
-  const buyNow = () => {
+  const buyNow = async() => {
     let formData = {
       'items': [{
        'id': parseInt(document.getElementById('js-qty-').value),
@@ -112,7 +112,7 @@ const App = () => {
       }]
      };
 
-     fetch(window.Shopify.routes.root + 'cart/add.js', {
+     await fetch(window.Shopify.routes.root + 'cart/add.js', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -120,7 +120,8 @@ const App = () => {
       body: JSON.stringify(formData)
     })
     .then(response => {
-      return response.json();
+      // return response.json();
+      alert('success');
     })
     .catch((error) => {
       alert('error')
