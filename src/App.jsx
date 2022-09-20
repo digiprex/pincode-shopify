@@ -177,8 +177,7 @@ const App = () => {
         }} >
           Add to cart
       </button> */}
-      <br/>
-      <button id="buyNowCustomId" onClick={() => {
+      {/* <button id="buyNowCustomId" onClick={() => {
         if(!pincode){
           setIsOpen(true)
         } else if( !status_code || status_code == '404' ){
@@ -188,7 +187,7 @@ const App = () => {
         }
         }}>
           Buy now
-      </button>
+      </button> */}
     <div>
     <Modal
         center
