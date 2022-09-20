@@ -107,8 +107,9 @@ const App = () => {
   const buyNow = () => {
     let formData = {
       'items': [{
-       'id': document.getElementById("shopify-product-id2").value,
-       'quantity': parseInt(document.getElementsByClassName("js-qty__num quantity__input")[0].value)}]
+       'id': parseInt(document.getElementById('js-qty-').value),
+       'quantity': document.getElementById("shopify-product-id2").value
+      }]
      };
 
      fetch(window.Shopify.routes.root + 'cart/add.js', {
