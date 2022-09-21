@@ -71,6 +71,7 @@ const App = () => {
           if(popup_check){
             Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd)
           } else {
+            window.localStorage.setItem('pincode',pincode);
             Set_delivery_date(response.data.data.available_courier_companies[0].etd)
           }
         } else {
@@ -119,22 +120,21 @@ const App = () => {
     });
   }
 
-  useEffect(()=>{    
+  useEffect(()=>{
+
     document.documentElement.style.setProperty(
       "--color-dark",
       process.env.REACT_APP_COLOR_DARK
-  );
-  document.documentElement.style.setProperty(
+      );
+      document.documentElement.style.setProperty(
       "--color-lighest",
       process.env.REACT_APP_COLOR_LIGHEST
-  ); 
-  document.documentElement.style.setProperty(
-      "--color-light",
-      process.env.REACT_APP_COLOR_LIGHT
-  );
-  },[])
-
-  useEffect(()=>{
+      ); 
+      document.documentElement.style.setProperty(
+        "--color-light",
+        process.env.REACT_APP_COLOR_LIGHT
+    );
+          
     document.getElementById('add_to_cart').addEventListener('click',() =>{
       if(!pincode){
         setIsOpen(true)
@@ -189,9 +189,6 @@ const App = () => {
     SetModalClicked(false);
     Set_delivery_date('');
     Set_modal_delivery_date('');
-    if(status_code == '200') {
-      window.localStorage.setItem('pincode',pincode);
-    }
   },[pincode])
 
 
