@@ -160,7 +160,9 @@ const App = () => {
     })
   },[])
 
-  const addToCartClick = () => {
+  const addToCartClick = (e) => {
+    e.preventDefault();
+    e.stoppropagation();
     if(!pincode){
       setIsOpen(true)
       Set_from_add_to_cart(true);
@@ -173,6 +175,8 @@ const App = () => {
   }
 
   const buyNowClick = () => {
+    e.preventDefault();
+    e.stoppropagation();
     if(!pincode){
       setIsOpen(true);
       Set_from_add_to_cart(false);
@@ -201,10 +205,10 @@ const App = () => {
     </div>
     <div>
       <div className='product__submit'>
-        <button id='add_to_cart' className='btn product__submit__add' onClick={addToCartClick}>Add to cart</button>
-        <button id='buyNowCustomId' className=' buy-now-custom-button buy-now-custom-button--unbranded' onClick={buyNowClick}>Buy Now</button>
+        <button id='add_to_cart' className='btn product__submit__add' onClick={(e) => addToCartClick(e)}>Add to cart</button>
+        <button id='buyNowCustomId' className=' buy-now-custom-button buy-now-custom-button--unbranded' onClick={(e) => buyNowClick(e)}>Buy Now</button>
       </div>
-    <Modal
+    <Modal 
         center
         open={modalIsOpen}
         onClose={closeDesktopModal}
