@@ -160,6 +160,9 @@ const App = () => {
 
   useEffect(()=>{
     SetClicked(false);
+    SetModalClicked(false);
+    Set_delivery_date('');
+    Set_modal_delivery_date('');
     if(status_code == '200') {
       window.localStorage.setItem('pincode',pincode);
     }
