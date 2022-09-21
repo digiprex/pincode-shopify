@@ -166,12 +166,13 @@ const App = () => {
       setIsOpen(true)
       Set_from_add_to_cart(true);
       Set_from_buy_now(false);
+      e.stoppropagation();
     } else if((pincode && status_code == '404')){
-      document.getElementById("pin-input").focus() 
+      document.getElementById("pin-input").focus();
+      e.stoppropagation(); 
     } else {
       addToCart();
     }
-    e.stoppropagation();
   }
 
   const buyNowClick = (e) => {
@@ -180,12 +181,13 @@ const App = () => {
       setIsOpen(true);
       Set_from_add_to_cart(false);
       Set_from_buy_now(true);
+      e.stoppropagation();
     } else if((pincode && status_code == '404')){
       document.getElementById("pin-input").focus()
+      e.stoppropagation();
     } else {
       buyNow();
     }
-    e.stoppropagation();
   }
 
   useEffect(()=>{
