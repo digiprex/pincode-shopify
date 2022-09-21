@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.react-responsive-modal-modal {
+    border-radius: 16px;
+    animation-fill-mode: forwards !important;
+  }
+
+  .react-responsive-modal-overlay{
+    animation-fill-mode: forwards !important;
+  }

@@ -19,6 +19,8 @@ const App = () => {
   const [modal_status_code,Set_modal_status_code]= useState("");
   const [modal_clicked,Set_modal_clicked] = useState(false);
   const [modal_link,Set_modal_link] = useState("");
+  const [from_add_to_cart,Set_from_add_to_cart] = useState(false);
+  const [from_buy_now,Set_from_buy_now] = useState(false);
 
   const closeDesktopModal = () => {
     setIsOpen(false);
@@ -133,25 +135,31 @@ const App = () => {
     });
   }
 
+  useEffect(()=>{    
   document.getElementById('add_to_cart').addEventListener('click',() =>{
     if(!pincode){
       setIsOpen(true)
+      Set_from_add_to_cart(true);
+      Set_from_buy_now(false);
     } else if((!pincode && !status_code) || (pincode && status_code == '404')){
       document.getElementById("pin-input").focus() 
     } else {
       addToCart();
     }
   })
- 
+
   document.getElementById('buyNowCustomId').addEventListener('click',() =>{
     if(!pincode){
-      setIsOpen(true)
-    } else if((!pincode && !status_code) || (pincode && status_code == '404')){
+      setIsOpen(true);
+      Set_from_add_to_cart(false);
+      Set_from_buy_now(true);
+    } else if((!status_code) || (pincode && status_code == '404')){
       document.getElementById("pin-input").focus()
     } else {
       buyNow();
     }
   })
+  },[])
 
   useEffect(()=>{
     if(status_code == '200') {
@@ -167,7 +175,8 @@ const App = () => {
         clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
     </div>
-      {/* <button className="product__submit__add"  onClick={() => {
+    <div>
+    <button id="add_to_cart"  onClick={() => {
         if(!pincode){
           setIsOpen(true)
         } else if( !status_code || status_code == '404' ){
@@ -177,8 +186,8 @@ const App = () => {
         }
         }} >
           Add to cart
-      </button> */}
-      {/* <button id="buyNowCustomId" onClick={() => {
+      </button>
+      <button id="buyNowCustomId" onClick={() => {
         if(!pincode){
           setIsOpen(true)
         } else if( !status_code || status_code == '404' ){
@@ -188,8 +197,7 @@ const App = () => {
         }
         }}>
           Buy now
-      </button> */}
-    <div>
+      </button>
     <Modal
         center
         open={modalIsOpen}
@@ -201,7 +209,8 @@ const App = () => {
     
         <PincodeSection pincode_value={modal_pincode} delivery_date_check={modal_delivery_date} status_code_check={modal_status_code} 
         clicked_check={modal_clicked} link_check={modal_link} SetPincode_check={SetModalPincode} SetClicked_check={SetModalClicked}
-        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} />
+        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} from_add_to_cart={from_add_to_cart}
+        from_buy_now={from_buy_now} buyNow={buyNow} addToCart={addToCart}/>
       </Modal>
     </div>
     </>

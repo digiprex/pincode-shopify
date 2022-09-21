@@ -202,12 +202,32 @@
     .right-upper
     .pincode
     .proceed-button {
-    width: 30%;
     height: 40px;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--color-dark) !important;
+    cursor: pointer;
+}
+
+.pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .submit-button{
+        width: 30%;
+    }
+
+.pincode-secton-main-container
+.cart-body-right
+.cart-body-right-container
+.right-upper
+.pincode
+.proceed-button {
+    width: 100%;
 }
 
 .pincode-secton-main-container
@@ -453,24 +473,6 @@
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-}
-
-.pincode-popup-main-container
-    .popup-container
-    .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .proceed-button {
-    background-color: var(--color-dark) !important;
-    width: 100% !important;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.proceed-button {
-    width: 100% !important;
 }
 
 @media only screen and (max-width: 1025px) {
