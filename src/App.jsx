@@ -159,6 +159,7 @@ const App = () => {
   },[])
 
   useEffect(()=>{
+    SetClicked(false);
     if(status_code == '200') {
       window.localStorage.setItem('pincode',pincode);
     }
