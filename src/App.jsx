@@ -91,21 +91,6 @@ const App = () => {
     }
   }
 
-  useEffect(()=>{
-    document.documentElement.style.setProperty(
-        "--color-dark",
-        process.env.REACT_APP_COLOR_DARK
-    );
-    document.documentElement.style.setProperty(
-        "--color-lighest",
-        process.env.REACT_APP_COLOR_LIGHEST
-    ); 
-    document.documentElement.style.setProperty(
-        "--color-light",
-        process.env.REACT_APP_COLOR_LIGHT
-    );
-  },[])
-
   const buyNow = () => {
     let count = parseInt(document.getElementById('js-qty-').value);
     let varientId = document.getElementById("shopify-product-id2").value;
@@ -136,6 +121,18 @@ const App = () => {
   }
 
   useEffect(()=>{    
+    document.documentElement.style.setProperty(
+      "--color-dark",
+      process.env.REACT_APP_COLOR_DARK
+  );
+  document.documentElement.style.setProperty(
+      "--color-lighest",
+      process.env.REACT_APP_COLOR_LIGHEST
+  ); 
+  document.documentElement.style.setProperty(
+      "--color-light",
+      process.env.REACT_APP_COLOR_LIGHT
+  );
   document.getElementById('add_to_cart').addEventListener('click',() =>{
     if(!pincode){
       setIsOpen(true)
