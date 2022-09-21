@@ -135,31 +135,31 @@ const App = () => {
         process.env.REACT_APP_COLOR_LIGHT
     );
           
-    document.getElementById('add_to_cart').addEventListener('click',() =>{
-      if(!pincode){
-        setIsOpen(true)
-        Set_from_add_to_cart(true);
-        Set_from_buy_now(false);
-        Set_modal_status_code('');
-      } else if((!pincode && !status_code) || (pincode && status_code == '404')){
-        document.getElementById("pin-input").focus() 
-      } else {
-        addToCart();
-      }
-    })
+    // document.getElementById('add_to_cart').addEventListener('click',() =>{
+    //   if(!pincode){
+    //     setIsOpen(true)
+    //     Set_from_add_to_cart(true);
+    //     Set_from_buy_now(false);
+    //     Set_modal_status_code('');
+    //   } else if((!pincode && !status_code) || (pincode && status_code == '404')){
+    //     document.getElementById("pin-input").focus() 
+    //   } else {
+    //     addToCart();
+    //   }
+    // })
   
-    document.getElementById('buyNowCustomId').addEventListener('click',() =>{
-      if(!pincode){
-        setIsOpen(true);
-        Set_from_add_to_cart(false);
-        Set_from_buy_now(true);
-        Set_modal_status_code('');
-      } else if((!status_code) || (pincode && status_code == '404')){
-        document.getElementById("pin-input").focus()
-      } else {
-        buyNow();
-      }
-    })
+    // document.getElementById('buyNowCustomId').addEventListener('click',() =>{
+    //   if(!pincode){
+    //     setIsOpen(true);
+    //     Set_from_add_to_cart(false);
+    //     Set_from_buy_now(true);
+    //     Set_modal_status_code('');
+    //   } else if((!status_code) || (pincode && status_code == '404')){
+    //     document.getElementById("pin-input").focus()
+    //   } else {
+    //     buyNow();
+    //   }
+    // })
   },[])
 
   const addToCartClick = (e) => {
@@ -209,8 +209,8 @@ const App = () => {
     </div>
     <div>
       <div className='product__submit'>
-        <button id='add_to_cart' className='btn product__submit__add' onClick={(e) => addToCartClick(e)}>Add to cart</button>
-        <button id='buyNowCustomId' className=' buy-now-custom-button buy-now-custom-button--unbranded' onClick={(e) => buyNowClick(e)}>Buy Now</button>
+        <button className='btn product__submit__add' onClick={(e) => addToCartClick(e)}>Add to cart</button>
+        <button className=' buy-now-custom-button buy-now-custom-button--unbranded' onClick={(e) => buyNowClick(e)}>Buy Now</button>
       </div>
     <Modal 
         center
