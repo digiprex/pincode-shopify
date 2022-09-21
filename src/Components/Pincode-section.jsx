@@ -96,8 +96,8 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                         </span>
                     </div>
                   }
-                     { (popup_check && status_code_check) ? 
-                     <div className="proceed-button" onClick={redirect}>
+                     { (popup_check && status_code_check == '200') ? 
+                     <div className="proceed-button" onClick={() => redirect()}>
                       <span>Proceed</span>
                     </div> : null }
                     { (pincode_value>100000 && clicked_check && status_code_check == "404") &&
