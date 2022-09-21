@@ -31,6 +31,10 @@
     align-items: center;
 }
 
+.product__submit__add {
+    width: 100%;
+}
+
 .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
