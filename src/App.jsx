@@ -174,7 +174,7 @@ const App = () => {
     }
   }
 
-  const buyNowClick = () => {
+  const buyNowClick = (e) => {
     e.preventDefault();
     e.stoppropagation();
     if(!pincode){
