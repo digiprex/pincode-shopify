@@ -176,28 +176,6 @@ const App = () => {
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
     </div>
     <div>
-    <button id="add_to_cart"  onClick={() => {
-        if(!pincode){
-          setIsOpen(true)
-        } else if( !status_code || status_code == '404' ){
-          document.getElementById("pin-input").focus()
-        } else {
-          addToCart();
-        }
-        }} >
-          Add to cart
-      </button>
-      <button id="buyNowCustomId" onClick={() => {
-        if(!pincode){
-          setIsOpen(true)
-        } else if( !status_code || status_code == '404' ){
-          document.getElementById("pin-input").focus()
-        } else {
-          buyNow();
-        }
-        }}>
-          Buy now
-      </button>
     <Modal
         center
         open={modalIsOpen}
