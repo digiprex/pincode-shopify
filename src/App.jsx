@@ -140,6 +140,7 @@ const App = () => {
         setIsOpen(true)
         Set_from_add_to_cart(true);
         Set_from_buy_now(false);
+        Set_modal_status_code('');
       } else if((!pincode && !status_code) || (pincode && status_code == '404')){
         document.getElementById("pin-input").focus() 
       } else {
@@ -152,6 +153,7 @@ const App = () => {
         setIsOpen(true);
         Set_from_add_to_cart(false);
         Set_from_buy_now(true);
+        Set_modal_status_code('');
       } else if((!status_code) || (pincode && status_code == '404')){
         document.getElementById("pin-input").focus()
       } else {
