@@ -200,8 +200,10 @@ const App = () => {
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
     </div>
     <div>
-    <button id='add_to_cart' className='btn product__submit__add' onClick={addToCartClick}>Add to cart</button>
-    <button id='buyNowCustomId' className=' buy-now-custom-button buy-now-custom-button--unbranded' onClick={buyNowClick}>Buy Now</button>
+      <div className='product__submit'>
+        <button id='add_to_cart' className='btn product__submit__add' onClick={addToCartClick}>Add to cart</button>
+        <button id='buyNowCustomId' className=' buy-now-custom-button buy-now-custom-button--unbranded' onClick={buyNowClick}>Buy Now</button>
+      </div>
     <Modal
         center
         open={modalIsOpen}
