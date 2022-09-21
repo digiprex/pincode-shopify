@@ -8,7 +8,6 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
     from_add_to_cart,from_buy_now,buyNow,addToCart
 }) => {
 
-  console.log(popup_check,'check');
   const brand = process.env.REACT_APP_BRAND == 'Mars' ? 'mars':'saturn'
   const redirect = () => {
     if(from_add_to_cart) {

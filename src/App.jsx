@@ -132,30 +132,57 @@ const App = () => {
       "--color-light",
       process.env.REACT_APP_COLOR_LIGHT
   );
-  document.getElementById('add_to_cart').addEventListener('click',() =>{
-    if(!pincode){
-      setIsOpen(true)
-      Set_from_add_to_cart(true);
-      Set_from_buy_now(false);
-    } else if((!pincode && !status_code) || (pincode && status_code == '404')){
-      document.getElementById("pin-input").focus() 
-    } else {
-      addToCart();
-    }
-  })
-
-  document.getElementById('buyNowCustomId').addEventListener('click',() =>{
-    if(!pincode){
-      setIsOpen(true);
-      Set_from_add_to_cart(false);
-      Set_from_buy_now(true);
-    } else if((!status_code) || (pincode && status_code == '404')){
-      document.getElementById("pin-input").focus()
-    } else {
-      buyNow();
-    }
-  })
   },[])
+
+  useEffect(()=>{
+    document.getElementById('add_to_cart').addEventListener('click',() =>{
+      if(!pincode){
+        setIsOpen(true)
+        Set_from_add_to_cart(true);
+        Set_from_buy_now(false);
+      } else if((!pincode && !status_code) || (pincode && status_code == '404')){
+        document.getElementById("pin-input").focus() 
+      } else {
+        addToCart();
+      }
+    })
+  
+    document.getElementById('buyNowCustomId').addEventListener('click',() =>{
+      if(!pincode){
+        setIsOpen(true);
+        Set_from_add_to_cart(false);
+        Set_from_buy_now(true);
+      } else if((!status_code) || (pincode && status_code == '404')){
+        document.getElementById("pin-input").focus()
+      } else {
+        buyNow();
+      }
+    })
+  },[])
+
+  // const addToCartClick = () => {
+  //   if(!pincode){
+  //     setIsOpen(true)
+  //     Set_from_add_to_cart(true);
+  //     Set_from_buy_now(false);
+  //   } else if((!pincode && !status_code) || (pincode && status_code == '404')){
+  //     document.getElementById("pin-input").focus() 
+  //   } else {
+  //     addToCart();
+  //   }
+  // }
+
+  // const buyNowClick = () => {
+  //   if(!pincode){
+  //     setIsOpen(true);
+  //     Set_from_add_to_cart(false);
+  //     Set_from_buy_now(true);
+  //   } else if((!status_code) || (pincode && status_code == '404')){
+  //     document.getElementById("pin-input").focus()
+  //   } else {
+  //     buyNow();
+  //   }
+  // }
 
   useEffect(()=>{
     SetClicked(false);
@@ -176,6 +203,8 @@ const App = () => {
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
     </div>
     <div>
+    {/* <button id='add_to_cart' onClick={addToCartClick}>Add to cart</button>
+    <button id='buyNowCustomId' onClick={buyNowClick}>Buy Now</button> */}
     <Modal
         center
         open={modalIsOpen}
