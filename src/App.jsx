@@ -45,8 +45,7 @@ const App = () => {
   }
 
   const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check) => {
-    // if(status_code_check != '404'){
-      if(!clicked){
+      // if(status_code_check == '200'){
       let data = JSON.stringify({
         "pincode": pincode_to_test,
         "brand": process.env.REACT_APP_BRAND
@@ -84,11 +83,11 @@ const App = () => {
       } catch(error) {
         console.log(error)
       }
-    } else {
-      document.getElementById('pin-input').focus();
-      SetClicked(false);
-      SetPincode('');
-    }
+    // } else {
+    //   document.getElementById('pin-input').focus();
+    //   SetClicked(false);
+    //   SetPincode('');
+    // }
   }
 
   const buyNow = () => {
