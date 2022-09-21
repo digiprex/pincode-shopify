@@ -162,7 +162,6 @@ const App = () => {
 
   const addToCartClick = (e) => {
     e.preventDefault();
-    e.stoppropagation();
     if(!pincode){
       setIsOpen(true)
       Set_from_add_to_cart(true);
@@ -172,11 +171,11 @@ const App = () => {
     } else {
       addToCart();
     }
+    e.stoppropagation();
   }
 
   const buyNowClick = (e) => {
     e.preventDefault();
-    e.stoppropagation();
     if(!pincode){
       setIsOpen(true);
       Set_from_add_to_cart(false);
@@ -186,6 +185,7 @@ const App = () => {
     } else {
       buyNow();
     }
+    e.stoppropagation();
   }
 
   useEffect(()=>{
