@@ -1,5 +1,6 @@
 import '../css/Pincode-section.css'
 import Amazon from "../images/amazon.png";
+import deliveryPic from '../images/tabler_truck-delivery.png';
 import "react-responsive-modal/styles.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
@@ -37,14 +38,19 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
   return (
     <div className="pincode-secton-main-container">
       <div className="cart-body-right">
-          <div className="cart-body-right-container">
+					<div className='delivery-symbol'>
+						<div className='delivery-image-div'>
+							<img src={deliveryPic} className="delivery-image" alt="" srcset="" />
+						</div>
+						<div className='delivery-image-text'>
+							Delivery:
+						</div>
+					</div>
+					<div className="cart-body-right-container">
               <div className="right-upper">
                   <div className="deliver-details">
-                      <span className="map-icon">
-                          <FaMapMarkerAlt className="fa-map-icon" /> 
-                      </span>
                       <span>
-                          Delivery Details <span>*</span>
+												Use pincode to check delivery details
                       </span>
                   </div>
                   <div className='pincode'>
@@ -143,10 +149,10 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                     }
                      
                   </div>
-                </div>
+              </div>
           </div>
       </div>
-      </div>
+      </div>  
   )
     
 }

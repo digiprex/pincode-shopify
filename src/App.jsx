@@ -208,11 +208,7 @@ const App = () => {
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
     </div>
     <div>
-      <div className='product__submit'>
-        <button className='btn product__submit__add' onClick={(e) => addToCartClick(e)}>Add to cart</button>
-        <button className=' buy-now-custom-button buy-now-custom-button--unbranded' onClick={(e) => buyNowClick(e)}>Buy Now</button>
-      </div>
-    <Modal 
+    {/* <Modal 
         center
         open={modalIsOpen}
         onClose={closeDesktopModal}
@@ -225,7 +221,7 @@ const App = () => {
         clicked_check={modal_clicked} link_check={modal_link} SetPincode_check={SetModalPincode} SetClicked_check={SetModalClicked}
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} from_add_to_cart={from_add_to_cart}
         from_buy_now={from_buy_now} buyNow={buyNow} addToCart={addToCart}/>
-      </Modal>
+      </Modal> */}
     </div>
     </>
   );
