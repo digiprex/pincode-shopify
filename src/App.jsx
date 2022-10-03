@@ -10,6 +10,7 @@ const App = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [pincode,Set_pincode] =  useState(window.localStorage.getItem('pincode') || "");
+  // const [pincode,Set_pincode] =  useState("");
   const [delivery_date,Set_delivery_date]=useState("");
   const [status_code,Set_status_code]= useState("");
   const [clicked,Set_clicked] = useState(false);
@@ -43,6 +44,7 @@ const App = () => {
   const SetModalClicked = (value) => {
     Set_modal_clicked(value)
   }
+
 
   const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check) => {
       // if(status_code_check == '200'){
@@ -160,6 +162,12 @@ const App = () => {
     //     buyNow();
     //   }
     // })
+
+    console.log(pincode,'pin');
+    if(pincode){
+      verifyPincodeDeliveribility(pincode);
+    }
+
   },[])
 
   const addToCartClick = (e) => {
@@ -205,7 +213,8 @@ const App = () => {
     <div className="App">
     <PincodeSection pincode_value={pincode} delivery_date_check={delivery_date} status_code_check={status_code} 
         clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
-        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false}/>
+        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false} Set_delivery_date={Set_delivery_date}
+        status_code={status_code}/>
     </div>
     <div>
     {/* <Modal 
