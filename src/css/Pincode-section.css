@@ -607,4 +607,16 @@
         width: 100%;
         margin-top: 20px;
     }
+
+    .delivery-symbol {
+        display: none;
+    }
+
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .deliver-details {
+        display: none;
+    }
 }

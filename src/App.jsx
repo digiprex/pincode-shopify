@@ -11,7 +11,7 @@ const App = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [pincode,Set_pincode] =  useState(window.localStorage.getItem('pincode') || "");
   // const [pincode,Set_pincode] =  useState("");
-  const [delivery_date,Set_delivery_date]=useState("");
+  const [delivery_date,Set_delivery_date]=useState(window.localStorage.getItem('delivery_date') || "");
   const [status_code,Set_status_code]= useState("");
   const [clicked,Set_clicked] = useState(false);
   const [link,Set_link] = useState("");
@@ -48,6 +48,7 @@ const App = () => {
 
   const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check) => {
       // if(status_code_check == '200'){
+      console.log('in verify pincode call',pincode_to_test);
       let data = JSON.stringify({
         "pincode": pincode_to_test,
         "brand": process.env.REACT_APP_BRAND
@@ -63,13 +64,16 @@ const App = () => {
       };
   
       try{
+        console.log('in try');
         const response = await axios(config);
+        console.log(response.data.status,'resp');
         if(popup_check){
           Set_modal_status_code(response.data.status);
         } else {
           Set_status_code(response.data.status);
         }
         if(response.data.status == "200") {
+          console.log('success');
           if(popup_check){
             Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd)
           } else {
@@ -136,39 +140,15 @@ const App = () => {
         "--color-light",
         process.env.REACT_APP_COLOR_LIGHT
     );
-          
-    // document.getElementById('add_to_cart').addEventListener('click',() =>{
-    //   if(!pincode){
-    //     setIsOpen(true)
-    //     Set_from_add_to_cart(true);
-    //     Set_from_buy_now(false);
-    //     Set_modal_status_code('');
-    //   } else if((!pincode && !status_code) || (pincode && status_code == '404')){
-    //     document.getElementById("pin-input").focus() 
-    //   } else {
-    //     addToCart();
-    //   }
-    // })
-  
-    // document.getElementById('buyNowCustomId').addEventListener('click',() =>{
-    //   if(!pincode){
-    //     setIsOpen(true);
-    //     Set_from_add_to_cart(false);
-    //     Set_from_buy_now(true);
-    //     Set_modal_status_code('');
-    //   } else if((!status_code) || (pincode && status_code == '404')){
-    //     document.getElementById("pin-input").focus()
-    //   } else {
-    //     buyNow();
-    //   }
-    // })
 
-    console.log(pincode,'pin');
     if(pincode){
-      verifyPincodeDeliveribility(pincode);
+      verifyPincodeDeliveribility(pincode,200,false);
     }
 
-  },[])
+  },[]);
+
+
+
 
   const addToCartClick = (e) => {
     e.preventDefault();
@@ -217,7 +197,7 @@ const App = () => {
         status_code={status_code}/>
     </div>
     <div>
-    {/* <Modal 
+    <Modal 
         center
         open={modalIsOpen}
         onClose={closeDesktopModal}
@@ -230,7 +210,7 @@ const App = () => {
         clicked_check={modal_clicked} link_check={modal_link} SetPincode_check={SetModalPincode} SetClicked_check={SetModalClicked}
         verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} from_add_to_cart={from_add_to_cart}
         from_buy_now={from_buy_now} buyNow={buyNow} addToCart={addToCart}/>
-      </Modal> */}
+      </Modal>
     </div>
     </>
   );

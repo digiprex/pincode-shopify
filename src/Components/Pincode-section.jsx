@@ -11,9 +11,9 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
     from_add_to_cart,from_buy_now,buyNow,addToCart,Set_delivery_date,status_code
 }) => {
 
+    console.log(delivery_date_check,'deli date');
     const [clicked,Set_clicked] = useState(false);
 	const [buttonName,Set_buttonName] = useState("Submit");
-    console.log(clicked,'clicked');
 
 	useEffect(() => {
 		const buttonChangedName = clicked ? "Change" : "Submit";
@@ -22,17 +22,12 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
 
 	useEffect(()=>{
 		Set_clicked(false);
-	},[])
+        if(pincode_value) {
+            Set_clicked(true);
+        }
+    },[])
 
   const brand = process.env.REACT_APP_BRAND == 'Mars' ? 'mars':'saturn'
-  const redirect = () => {
-    if(from_add_to_cart) {
-        addToCart();
-    } 
-    if(from_buy_now){
-        buyNow();
-    }
-  }
   const isValidInput = (e) => {
     
       if (e.keyCode === 13) {
