@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 const PincodeSection = ({modal_pincode,delivery_date_check_modal,status_code_check,clicked_check,
     link_check,SetPincode_check,SetClicked_check,verifyPincodeDeliveribility_check,popup_check,
-    from_add_to_cart,from_buy_now,buyNow,addToCart,Set_delivery_date,
+    from_add_to_cart,from_buy_now,buyNow,addToCart,Set_delivery_date,isLoading
 }) => {
     const [clicked,Set_clicked] = useState(false);
 	const [buttonName,Set_buttonName] = useState("Submit");
@@ -20,9 +20,6 @@ const PincodeSection = ({modal_pincode,delivery_date_check_modal,status_code_che
 	useEffect(()=>{
 		Set_clicked(false);
         SetPincode_check('');
-        // if(modal_pincode) {
-        //     Set_clicked(true);
-        // }
     },[])
 
   const brand = process.env.REACT_APP_BRAND == 'Mars' ? 'mars':'saturn'
@@ -101,66 +98,64 @@ const PincodeSection = ({modal_pincode,delivery_date_check_modal,status_code_che
                         >
                             {/* {(clicked_check && modal_pincode.length==6)?  */}
                             {/* <span>Change</span> :  */}
-                            <span>{buttonName}</span>
+                            { !isLoading ? <span>{buttonName}</span> : <span>Fetching details... </span> }
                         </div>
                      </div>
+                    { !isLoading? <div>
                      { (modal_pincode>100000 && clicked && status_code_check =='200') && <div className="estimated-days">
                         <div style={{ display: "flex" }}>
-                            <div className="estimated-days-start">
-                                *
-                            </div>
                             <div className="days-estimation">
                                 Free delivery by  <span className="estimation-date"> {delivery_date_check_modal} </span>
                             </div>
                         </div>
                     </div>
                     }
+                     </div> : null }
                     
                      {/* { (popup_check && status_code_check_check == '200') ? 
                      <div className="proceed-button" onClick={() => redirect()}>
                       <span>Proceed</span>
                     </div> : null } */}
-                    { (modal_pincode>100000 && clicked && status_code_check == "404") &&
-                      <div>
-                      <div className="estimated-days">
-                          <div
-                              style={{ display: "flex" }}
-                          >
-                              <div className="estimated-days-start">
-                                  *
-                              </div>
-                              <div className="days-estimation non-servicable-pin">
-                                  We are currently not operating in this location
-                                  <br />
-                                  Try another pincode.
-                              </div>
-                          </div>
-                      </div>
-                      <div className="available-in-amazon">
-                              <div className="amazon-info">
-                                    <div className="message-div">
-                                    But you can buy our products from {brand} by ghc store on Amazon
-                                    </div> 
-                                  <div className="buy-button">
-                                      <a
-                                          href={link_check}
-                                          rel="noopener noreferrer"
-                                          target="_blank"
-                                      >
-                                          <span>
-                                              Buy Now on{" "}
-                                          </span>
-                                          <img
-                                              src={Amazon}
-                                              alt="amazon logo"
-                                              className="amazon-logo"
-                                          />
-                                      </a>
-                                  </div>
-                              </div>
-                      </div>
-                  </div>
-                    }
+                    { !isLoading ? <div>
+                        { (modal_pincode>100000 && clicked && status_code_check == "404") &&
+                        <div>
+                        <div className="estimated-days">
+                            <div
+                                style={{ display: "flex" }}
+                            >
+                                <div className="days-estimation non-servicable-pin">
+                                    We are currently not operating in this location
+                                    <br />
+                                    Try another pincode.
+                                </div>
+                            </div>
+                        </div>
+                        <div className="available-in-amazon">
+                                <div className="amazon-info">
+                                        <div className="message-div">
+                                        But you can buy our products from {brand} by ghc store on Amazon
+                                        </div> 
+                                    <div className="buy-button">
+                                        <a
+                                            href={link_check}
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                        >
+                                            <span>
+                                                Buy Now on{" "}
+                                            </span>
+                                            <img
+                                                src={Amazon}
+                                                alt="amazon logo"
+                                                className="amazon-logo"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                        }
+                    </div> : null }
                      
                   </div>
               </div>

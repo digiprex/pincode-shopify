@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,clicked_check,
     link_check,SetPincode_check,SetClicked_check,verifyPincodeDeliveribility_check,popup_check,
-    from_add_to_cart,from_buy_now,buyNow,addToCart,Set_delivery_date,status_code
+    from_add_to_cart,from_buy_now,buyNow,addToCart,Set_delivery_date,status_code,isLoading
 }) => {
     const [clicked,Set_clicked] = useState(false);
 	const [buttonName,Set_buttonName] = useState("Submit");
@@ -100,20 +100,21 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                         >
                             {/* {(clicked_check && pincode_value.length==6)?  */}
                             {/* <span>Change</span> :  */}
-                            <span>{buttonName}</span>
+                           { !isLoading ? <span>{buttonName}</span> : <span>Fetching details... </span> }
                         </div>
                      </div>
-                     { (pincode_value>100000 && clicked && status_code =='200') && <div className="estimated-days">
-                        <div style={{ display: "flex" }}>
-                            <div className="estimated-days-start">
-                                *
-                            </div>
-                            <div className="days-estimation">
-                                Free delivery by  <span className="estimation-date"> {delivery_date_check} </span>
-                            </div>
-                        </div>
-                    </div>
-                    }
+										 { !isLoading ? 
+										 <div>
+											{ (pincode_value>100000 && clicked && status_code =='200') && 
+												<div className="estimated-days">
+														<div style={{ display: "flex" }}>
+																<div className="days-estimation">
+																		Free delivery by  <span className="estimation-date"> {delivery_date_check} </span>
+																</div>
+														</div>
+													</div>
+												}
+										 </div> : null }
                     
                      {/* { (popup_check && status_code_check == '200') ? 
                      <div className="proceed-button" onClick={() => redirect()}>
@@ -125,9 +126,6 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                           <div
                               style={{ display: "flex" }}
                           >
-                              <div className="estimated-days-start">
-                                  *
-                              </div>
                               <div className="days-estimation non-servicable-pin">
                                   We are currently not operating in this location
                                   <br />

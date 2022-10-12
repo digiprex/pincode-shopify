@@ -18,6 +18,7 @@ const PincodeSection = ({
   verifyPincodeDeliveribility_check,
   popup_check,
   Set_delivery_date,
+  isLoading
 }) => {
   const [clicked, Set_clicked] = useState(false);
   const [buttonName, Set_buttonName] = useState("Submit");
@@ -53,12 +54,14 @@ const PincodeSection = ({
  	}
 
   useEffect(() => {
-    const buttonChangedName = pincode_value ? "Change" : "Enter pincode";
+    const buttonChangedName = (pincode_value || modal_pincode) ? "Change" : "Enter pincode";
     Set_buttonName(buttonChangedName);
-  }, [clicked]);
+  }, [modal_pincode]);
 
   useEffect(() => {
     Set_clicked(false);
+    const buttonChangedName = (pincode_value || modal_pincode) ? "Change" : "Enter pincode";
+    Set_buttonName(buttonChangedName);
     if (pincode_value) {
       Set_clicked(true);
     }
@@ -123,7 +126,7 @@ const PincodeSection = ({
         <PincodeSectionPopup pincode_value={pincode_value} modal_pincode={modal_pincode} delivery_date_check={delivery_date_check}
         delivery_date_check_modal={delivery_date_check_modal} status_code_check={status_code_check} 
         clicked_check={clicked_check} link_check={link_check} SetPincode_check={SetPincode_check} SetClicked_check={SetClicked_check}
-        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility_check} popup_check={true} />
+        verifyPincodeDeliveribility_check={verifyPincodeDeliveribility_check} popup_check={true} isLoading={isLoading} />
     </BottomSheet>
     </>
   );

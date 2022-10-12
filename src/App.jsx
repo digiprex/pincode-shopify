@@ -18,6 +18,7 @@ const App = () => {
   const [modal_status_code,Set_modal_status_code]= useState("");
   const [modal_clicked,Set_modal_clicked] = useState(false);
   const [modal_link,Set_modal_link] = useState("");
+  const [isLoading,Set_isLoading] = useState(false);
 
   const SetPincode = (value) => {
     Set_pincode(value)
@@ -36,7 +37,7 @@ const App = () => {
   }
 
   const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check) => {
-      // if(status_code_check == '200'){
+      Set_isLoading(true);
       let data = JSON.stringify({
         "pincode": pincode_to_test,
         "brand": process.env.REACT_APP_BRAND
@@ -53,6 +54,7 @@ const App = () => {
   
       try{
         const response = await axios(config);
+        Set_isLoading(false);
         if(popup_check){
           Set_modal_status_code(response.data.status);
         } else {
@@ -63,6 +65,7 @@ const App = () => {
             console.log(popup_check,'check in resp');
             window.localStorage.setItem('pincode',pincode_to_test);
             Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd);
+            Set_delivery_date(response.data.data.available_courier_companies[0].etd)
             SetPincode(modal_pincode);
           } else {
             window.localStorage.setItem('pincode',pincode_to_test);
@@ -123,13 +126,13 @@ const App = () => {
         <PincodeSection pincode_value={pincode} delivery_date_check={delivery_date} status_code_check={status_code} 
           clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
           verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false} Set_delivery_date={Set_delivery_date}
-          status_code={status_code}/>
+          status_code={status_code} isLoading={isLoading}/>
       </div>
       <div className='mobile-pincode-main-section'>
         <PincodeSectionMobile pincode_value={pincode}  delivery_date_check={delivery_date} delivery_date_check_modal={modal_delivery_date} status_code_check={modal_status_code}
           modal_pincode={modal_pincode} clicked_check={modal_clicked} link_check={modal_link} SetPincode_check={SetModalPincode} SetClicked_check={SetModalClicked}
           verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} Set_delivery_date={Set_modal_delivery_date}
-          status_code={status_code}/>
+          status_code={status_code} isLoading={isLoading}/>
       </div>
     </div>
     <div>
