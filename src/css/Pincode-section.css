@@ -1,3 +1,8 @@
+
+
+.mobile-delivery-details{
+    display: none;
+}
 .pincode-secton-main-container {
     width: 100%;
     margin-top: 35px;
@@ -9,17 +14,6 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
     border-radius: 10px;
     flex: 10;
-}
-
-.pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .pincode-secton-main-container
@@ -195,7 +189,7 @@
     transition: all 0.8s
     }
 
-    .pincode-secton-main-container
+    /* .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
@@ -212,10 +206,10 @@
     margin-top: -120%;
     opacity: 0;
     transition: all 0.8s
-    }
+    } */
 
 
-    .pincode-secton-main-container
+    /* .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
@@ -226,9 +220,9 @@
     margin: 0;
     opacity: 1;
     transition: 0s
-    }
+    } */
     
-    .pincode-secton-main-container
+    /* .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
@@ -239,7 +233,7 @@
     margin: 0;
     opacity: 1;
     transition: 0s
-    }
+    } */
 
 .pincode-secton-main-container
     .cart-body-right
@@ -511,14 +505,7 @@
     padding: 0;
 }
 
-.pincode-popup-main-container
-    .popup-container
-    .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper {
-    padding-top: 0;
-}
+
 
 .pincode-popup-main-container .popup-container .close-button {
     position: absolute;
@@ -548,21 +535,68 @@
     width: 20px;
 }
 
+
+@media only screen and (min-width: 1025px) {
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+}
+
 @media only screen and (max-width: 1025px) {
     .pincode-popup-main-container .popup-container {
         width: 40%;
     }
+
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 }
 
 @media only screen and (max-width: 920px) {
     .pincode-popup-main-container .popup-container {
         width: 50%;
     }
+
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 }
 
 @media only screen and (max-width: 780px) {
     .pincode-popup-main-container .popup-container {
         width: 75%;
+    }
+
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -617,6 +651,39 @@
     .cart-body-right-container
     .right-upper
     .deliver-details {
+        /* display: none; */
+    }
+
+    /* .pincode .estimated-days {
         display: none;
+    } */
+
+    /* #pin-input {
+        display: none;
+    } */
+
+    .mobile-delivery-details{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .estimation-date{
+        color: #00cc6a;
+    }
+
+    .delivery-details-mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+        padding-top: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }

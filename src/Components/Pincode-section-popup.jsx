@@ -13,7 +13,7 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
 	const [buttonName,Set_buttonName] = useState("Submit");
 
 	useEffect(() => {
-		const buttonChangedName = pincode_value ? "Change" : "Submit";
+		const buttonChangedName = clicked ? "Change" : "Submit";
 		Set_buttonName(buttonChangedName);
 	},[clicked]);
 
@@ -89,7 +89,7 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                                 () => {
                                     if(!clicked){
                                         Set_clicked((prevState) => !prevState);
-                                        verifyPincodeDeliveribility_check(pincode_value,status_code_check,popup_check)
+                                        verifyPincodeDeliveribility_check(pincode_value,status_code_check,true)
                                     } else {
                                         Set_clicked((prevState) => !prevState);
                                         SetPincode_check('');

@@ -12,3 +12,36 @@
   .react-responsive-modal-overlay{
     animation-fill-mode: forwards !important;
   }
+
+  .mobile-pincode-main-section{
+    display: none;
+  }
+
+  .pincode-main-section{
+    display: block;
+  }
+
+  #pincode-submit{
+  }
+
+  #mobile-pincode-submit{
+    display: none;
+  }
+  
+  @media only screen and (max-width:580px) {
+    .pincode-main-section{
+      display: none;
+    }
+
+    .mobile-pincode-main-section{
+      display: block;
+    }
+
+    /* #pincode-submit{
+      display: none;
+    } */
+
+    #mobile-pincode-submit{
+      display: block;
+    }
+  }
