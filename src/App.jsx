@@ -13,7 +13,7 @@ const App = () => {
   const [status_code,Set_status_code]= useState("");
   const [clicked,Set_clicked] = useState(false);
   const [link,Set_link] = useState("");
-  const [modal_pincode,Set_modal_pincode] = useState("");
+  const [modal_pincode,Set_modal_pincode] = useState(window.localStorage.getItem('pincode') || "");
   const [modal_delivery_date,Set_modal_delivery_date]=useState("");
   const [modal_status_code,Set_modal_status_code]= useState("");
   const [modal_clicked,Set_modal_clicked] = useState(false);
@@ -37,7 +37,6 @@ const App = () => {
 
   const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check) => {
       // if(status_code_check == '200'){
-      console.log('in verify pincode call',pincode_to_test);
       let data = JSON.stringify({
         "pincode": pincode_to_test,
         "brand": process.env.REACT_APP_BRAND
@@ -54,18 +53,19 @@ const App = () => {
   
       try{
         const response = await axios(config);
-        console.log(response.data.status,popup_check,'resp');
         if(popup_check){
           Set_modal_status_code(response.data.status);
         } else {
           Set_status_code(response.data.status);
         }
         if(response.data.status == "200") {
-          console.log('success');
           if(popup_check){
-            Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd)
+            console.log(popup_check,'check in resp');
+            window.localStorage.setItem('pincode',pincode_to_test);
+            Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd);
+            SetPincode(modal_pincode);
           } else {
-            window.localStorage.setItem('pincode',pincode);
+            window.localStorage.setItem('pincode',pincode_to_test);
             Set_delivery_date(response.data.data.available_courier_companies[0].etd)
           }
         } else {
@@ -102,17 +102,18 @@ const App = () => {
 
     if(pincode){
       verifyPincodeDeliveribility(pincode,200,false);
+      verifyPincodeDeliveribility(modal_pincode,200,true);
     }
 
   },[]);
 
 
-  useEffect(()=>{
-    SetClicked(false);
-    SetModalClicked(false);
-    Set_delivery_date('');
-    Set_modal_delivery_date('');
-  },[pincode])
+  // useEffect(()=>{
+  //   SetClicked(false);
+  //   SetModalClicked(false);
+  //   Set_delivery_date('');
+  //   Set_modal_delivery_date('');
+  // },[pincode])
 
 
   return (
@@ -125,9 +126,9 @@ const App = () => {
           status_code={status_code}/>
       </div>
       <div className='mobile-pincode-main-section'>
-        <PincodeSectionMobile pincode_value={pincode} delivery_date_check={delivery_date} status_code_check={status_code} 
-          clicked_check={clicked} link_check={link} SetPincode_check={SetPincode} SetClicked_check={SetClicked}
-          verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={false} Set_delivery_date={Set_delivery_date}
+        <PincodeSectionMobile pincode_value={pincode}  delivery_date_check={delivery_date} delivery_date_check_modal={modal_delivery_date} status_code_check={modal_status_code}
+          modal_pincode={modal_pincode} clicked_check={modal_clicked} link_check={modal_link} SetPincode_check={SetModalPincode} SetClicked_check={SetModalClicked}
+          verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} Set_delivery_date={Set_modal_delivery_date}
           status_code={status_code}/>
       </div>
     </div>

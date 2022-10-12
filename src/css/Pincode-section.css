@@ -686,4 +686,15 @@
         align-items: center;
         justify-content: center;
     }
+
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .submit-button{
+        width: 40%;
+        background-color: var(--color-light);
+    }
 }

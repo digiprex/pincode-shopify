@@ -5,9 +5,9 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,clicked_check,
+const PincodeSection = ({modal_pincode,delivery_date_check_modal,status_code_check,clicked_check,
     link_check,SetPincode_check,SetClicked_check,verifyPincodeDeliveribility_check,popup_check,
-    from_add_to_cart,from_buy_now,buyNow,addToCart,Set_delivery_date,status_code
+    from_add_to_cart,from_buy_now,buyNow,addToCart,Set_delivery_date,
 }) => {
     const [clicked,Set_clicked] = useState(false);
 	const [buttonName,Set_buttonName] = useState("Submit");
@@ -19,9 +19,10 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
 
 	useEffect(()=>{
 		Set_clicked(false);
-        if(pincode_value) {
-            Set_clicked(true);
-        }
+        SetPincode_check('');
+        // if(modal_pincode) {
+        //     Set_clicked(true);
+        // }
     },[])
 
   const brand = process.env.REACT_APP_BRAND == 'Mars' ? 'mars':'saturn'
@@ -70,7 +71,7 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                             minLength="6"
                             maxLength="6"
                             placeholder="Enter your pincode"
-                            value={pincode_value}
+                            value={modal_pincode}
                             name="pincode"
                             onChange={(e) => SetPincode_check(e.target.value)}
                             onKeyDown={isValidInput}
@@ -80,7 +81,7 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                         />
                         <div
                             className={
-                                (pincode_value > 100000)
+                                (modal_pincode > 100000)
                                     ? "submit-button submit-button-active"
                                     : "submit-button"
                             }
@@ -89,7 +90,7 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                                 () => {
                                     if(!clicked){
                                         Set_clicked((prevState) => !prevState);
-                                        verifyPincodeDeliveribility_check(pincode_value,status_code_check,true)
+                                        verifyPincodeDeliveribility_check(modal_pincode,status_code_check,true)
                                     } else {
                                         Set_clicked((prevState) => !prevState);
                                         SetPincode_check('');
@@ -98,28 +99,28 @@ const PincodeSection = ({pincode_value,delivery_date_check,status_code_check,cli
                                     }
                             }
                         >
-                            {/* {(clicked_check && pincode_value.length==6)?  */}
+                            {/* {(clicked_check && modal_pincode.length==6)?  */}
                             {/* <span>Change</span> :  */}
                             <span>{buttonName}</span>
                         </div>
                      </div>
-                     { (pincode_value>100000 && clicked && status_code =='200') && <div className="estimated-days">
+                     { (modal_pincode>100000 && clicked && status_code_check =='200') && <div className="estimated-days">
                         <div style={{ display: "flex" }}>
                             <div className="estimated-days-start">
                                 *
                             </div>
                             <div className="days-estimation">
-                                Free delivery by  <span className="estimation-date"> {delivery_date_check} </span>
+                                Free delivery by  <span className="estimation-date"> {delivery_date_check_modal} </span>
                             </div>
                         </div>
                     </div>
                     }
                     
-                     {/* { (popup_check && status_code_check == '200') ? 
+                     {/* { (popup_check && status_code_check_check == '200') ? 
                      <div className="proceed-button" onClick={() => redirect()}>
                       <span>Proceed</span>
                     </div> : null } */}
-                    { (pincode_value>100000 && clicked && status_code_check == "404") &&
+                    { (modal_pincode>100000 && clicked && status_code_check == "404") &&
                       <div>
                       <div className="estimated-days">
                           <div
