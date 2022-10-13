@@ -4,11 +4,13 @@
     display: none;
 }
 .pincode-secton-main-container {
+    margin-top: 20px;
     width: 100%;
     margin-top: 35px;
 }
 
 .pincode-section-container {
+    margin-top: 15px;
     border-top: solid 1px #C9C9C9;
     border-bottom: solid 1px #C9C9C9;
 }
