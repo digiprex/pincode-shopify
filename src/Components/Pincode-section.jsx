@@ -121,7 +121,7 @@ const PincodeSection = ({
                   {!isLoading ? (
                     <span>{buttonName}</span>
                   ) : (
-                    <span>Fetching details... </span>
+                    <span>Fetching... </span>
                   )}
                 </button>
               </div>

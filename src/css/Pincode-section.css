@@ -11,7 +11,6 @@
 .pincode-secton-main-container .cart-body-right .cart-body-right-container {
     background-color: #fff;
     box-sizing: border-box;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
     border-radius: 10px;
     flex: 10;
 }
@@ -24,6 +23,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    font-size: 14px;
 }
 
 .product__submit__add {
@@ -100,6 +100,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 34px;
 }
 
 .pincode-secton-main-container
@@ -112,8 +113,7 @@
     width: 65%;
     border: none;
     outline: none;
-    padding: 0 12px;
-    font-size: 16px;
+    font-size: 14px;
     box-shadow: none;
     margin-right: 5%;
     height: 40px;
@@ -263,7 +263,7 @@
     .pincode
     .pin-input
     .submit-button{
-        width: 30%;
+        width: 50%;
         background-color: var(--color-light);
         border: none;
     }
@@ -295,7 +295,7 @@
     span {
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
 }
 
@@ -329,7 +329,7 @@
     .days-estimation {
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 24px;
     color: #000;
 }
@@ -361,10 +361,9 @@
     .estimation-date {
     font-weight: 400;
     font-style: normal;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 24px;
     color: #00cc6a;
-    margin-left: 10px;
 }
 
 .pincode-secton-main-container
@@ -492,7 +491,6 @@
     position: relative;
     border-radius: 10px;
     background-color: #fff;
-    box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
 }
 
 .pincode-popup-main-container
@@ -534,6 +532,10 @@
     width: 20px;
 }
 
+.delivery-image-text{
+    font-size: 14px;
+    color: #777777
+}
 
 @media only screen and (min-width: 1025px) {
     .pincode-secton-main-container
@@ -591,11 +593,11 @@
     .cart-body-right
     .cart-body-right-container
     .right-upper {
-        padding: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 30px 0;
     }
 }
 
@@ -669,6 +671,11 @@
 
     .estimation-date{
         color: #00cc6a;
+        font-size: 14px;
+    }
+
+    .days-estimation{
+        font-size: 14px;
     }
 
     .delivery-details-mobile{
@@ -694,7 +701,7 @@
     .pincode
     .pin-input
     .submit-button{
-        width: 40%;
+        width: 50%;
         background-color: var(--color-light);
         border: none;
     }
