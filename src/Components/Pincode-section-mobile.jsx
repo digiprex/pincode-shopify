@@ -19,7 +19,7 @@ const PincodeSection = ({
   sheetOpen,
   Set_sheetOpen,
   isLoading,
-  Set_delivery_date
+  Set_delivery_date,
 }) => {
   const [clicked, Set_clicked] = useState(false);
   const [buttonName, Set_buttonName] = useState("Submit");
@@ -49,64 +49,67 @@ const PincodeSection = ({
 
   return (
     <>
-      <div className="pincode-secton-main-container">
-        <div className="cart-body-right">
-          <div className="cart-body-right-container">
-            <div className="right-upper">
-              <div className="pincode">
-                <div className="pin-input">
-                  <div className="delivery-details-mobile">
-                    {
-                      // (pincode_value>100000 && clicked && status_code =='200')
-                      pincode_value ? (
-                        <div>
-                          <div className="estimated-days-mobile">
-                            <div style={{ display: "flex" }}>
-                              <div className="days-estimation">
-                                Deliver to: {pincode_value}
+      <div className="pincode-section-container">
+        <div className="pincode-secton-main-container">
+          <div className="cart-body-right">
+            <div className="cart-body-right-container">
+              <div className="right-upper">
+                <div className="pincode">
+                  <div className="pin-input">
+                    <div className="delivery-details-mobile">
+                      {
+                        // (pincode_value>100000 && clicked && status_code =='200')
+                        pincode_value ? (
+                          <div>
+                            <div className="estimated-days-mobile">
+                              <div style={{ display: "flex" }}>
+                                <div className="days-estimation">
+                                  Deliver to: {pincode_value}
+                                </div>
+                              </div>
+                            </div>
+                            <div className="estimated-days-mobile">
+                              <div style={{ display: "flex" }}>
+                                <div className="days-estimation">
+                                  Free delivery by{" "}
+                                  <span className="estimation-date">
+                                    {" "}
+                                    {delivery_date_check}{" "}
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </div>
-                          <div className="estimated-days-mobile">
-                            <div style={{ display: "flex" }}>
-                              <div className="days-estimation">
-                                Free delivery by{" "}
-                                <span className="estimation-date">
-                                  {" "}
-                                  {delivery_date_check}{" "}
-                                </span>
+                        ) : (
+                          <div>
+                            <div className="estimated-days-mobile">
+                              <div style={{ display: "flex" }}>
+                                <div className="days-estimation">
+                                  Find a partner that delivers to you
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      ) : (
-                        <div>
-                          <div className="estimated-days-mobile">
-                            <div style={{ display: "flex" }}>
-                              <div className="days-estimation">
-                                Find a partner that delivers to you
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    }
+                        )
+                      }
+                    </div>
+                    <button
+                      className="submit-button submit-button-active"
+                      id="pincode-submit-1"
+                      onClick={() => {
+                        Set_sheetOpen(true);
+                      }}
+                    >
+                      <span>{buttonName}</span>
+                    </button>
                   </div>
-                  <button
-                    className="submit-button submit-button-active"
-                    id="pincode-submit-1"
-                    onClick={() => {
-                      Set_sheetOpen(true);
-                    }}
-                  >
-                    <span>{buttonName}</span>
-                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <BottomSheet open={sheetOpen} onDismiss={closeSheet}>
         <PincodeSectionPopup
           pincode_value={pincode_value}
