@@ -61,7 +61,6 @@ const App = () => {
           Set_status_code(response.data.status);
         }
         if(response.data.status == "200") {
-          console.log(popup_check,'pop up check');
           if(popup_check){
             window.localStorage.setItem('pincode',pincode_to_test);
             Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd);
