@@ -1,7 +1,7 @@
 import "../css/Pincode-section.css";
 import Amazon from "../images/amazon.png";
-import deliveryPic from "../images/tabler_truck-delivery.png";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import delivery_mars from "../images/truck_mars.png";
+import delivery_saturn from "../images/truck_saturn.png";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -25,6 +25,7 @@ const PincodeSection = ({
 }) => {
   const [clicked, Set_clicked] = useState(false);
   const [buttonName, Set_buttonName] = useState("Submit");
+  const [brand, Set_brand] = useState("");
 
   useEffect(() => {
     const buttonChangedName = pincode_value ? "Change" : "Submit";
@@ -32,13 +33,15 @@ const PincodeSection = ({
   }, [clicked]);
 
   useEffect(() => {
+    const brand_name =
+      process.env.REACT_APP_BRAND == "Mars" ? "mars" : "saturn";
+    Set_brand(brand_name);
     Set_clicked(false);
     if (pincode_value) {
       Set_clicked(true);
     }
   }, []);
 
-  const brand = process.env.REACT_APP_BRAND == "Mars" ? "mars" : "saturn";
   const isValidInput = (e) => {
     if (e.keyCode === 13) {
       document.getElementById("pincode-submit").click();
@@ -61,7 +64,7 @@ const PincodeSection = ({
         <div className="delivery-symbol">
           <div className="delivery-image-div">
             <img
-              src={deliveryPic}
+              src={brand == "mars" ? delivery_mars : delivery_saturn}
               className="delivery-image"
               alt=""
               srcset=""
@@ -94,7 +97,7 @@ const PincodeSection = ({
                 />
                 <button
                   className={
-                    pincode_value > 100000
+                    pincode_value >= 100000
                       ? "submit-button submit-button-active"
                       : "submit-button"
                   }
@@ -113,8 +116,7 @@ const PincodeSection = ({
                       Set_delivery_date("");
                     }
                   }}
-
-									disabled={!pincode_value || isLoading}
+                  disabled={pincode_value<100000 || isLoading}
                 >
                   {/* {(clicked_check && pincode_value.length==6)?  */}
                   {/* <span>Change</span> :  */}
@@ -147,43 +149,46 @@ const PincodeSection = ({
                      <div className="proceed-button" onClick={() => redirect()}>
                       <span>Proceed</span>
                     </div> : null } */}
-							{!isLoading ? <div>
-								{pincode_value > 100000 && clicked && status_code_check == "404" && (
-									<div>
-										<div className="estimated-days">
-											<div style={{ display: "flex" }}>
-												<div className="days-estimation non-servicable-pin">
-													We are currently not operating in this location
-													<br />
-													Try another pincode.
-												</div>
-											</div>
-										</div>
-										<div className="available-in-amazon">
-											<div className="amazon-info">
-												<div className="message-div">
-													But you can buy our products from {brand} by ghc store
-													on Amazon
-												</div>
-												<div className="buy-button">
-													<a
-														href={link_check}
-														rel="noopener noreferrer"
-														target="_blank"
-													>
-														<span>Buy Now on </span>
-														<img
-															src={Amazon}
-															alt="amazon logo"
-															className="amazon-logo"
-														/>
-													</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								)}
-							</div> : null }
+              {!isLoading ? (
+                <div>
+                  {pincode_value > 100000 &&
+                    clicked &&
+                    status_code_check == "404" && (
+                      <div>
+                        <div className="estimated-days">
+                          <div style={{ display: "flex" }}>
+                            <div className="days-estimation non-servicable-pin">
+                              We are currently not operating in this location.
+                              Try another pincode.
+                            </div>
+                          </div>
+                        </div>
+                        <div className="available-in-amazon">
+                          <div className="amazon-info">
+                            <div className="message-div">
+                              But you can buy our products from {brand} by GHC
+                              store on Amazon
+                            </div>
+                            <div className="buy-button">
+                              <a
+                                href={link_check}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                              >
+                                <span>Buy Now on </span>
+                                <img
+                                  src={Amazon}
+                                  alt="amazon logo"
+                                  className="amazon-logo"
+                                />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

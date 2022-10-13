@@ -4,7 +4,6 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 import PincodeSection from './Components/Pincode-section';
 import PincodeSectionMobile from './Components/Pincode-section-mobile';
-import { BottomSheet } from "react-spring-bottom-sheet";
 import "react-spring-bottom-sheet/dist/style.css";
 
 const App = () => {
@@ -19,6 +18,7 @@ const App = () => {
   const [modal_clicked,Set_modal_clicked] = useState(false);
   const [modal_link,Set_modal_link] = useState("");
   const [isLoading,Set_isLoading] = useState(false);
+  const [sheetOpen, Set_sheetOpen] = useState(false);
 
   const SetPincode = (value) => {
     Set_pincode(value)
@@ -36,7 +36,7 @@ const App = () => {
     Set_modal_clicked(value)
   }
 
-  const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check) => {
+  const verifyPincodeDeliveribility = async (pincode_to_test,status_code_check,popup_check,from_sheet=false) => {
       Set_isLoading(true);
       let data = JSON.stringify({
         "pincode": pincode_to_test,
@@ -61,12 +61,17 @@ const App = () => {
           Set_status_code(response.data.status);
         }
         if(response.data.status == "200") {
+          console.log(popup_check,'pop up check');
           if(popup_check){
-            console.log(popup_check,'check in resp');
             window.localStorage.setItem('pincode',pincode_to_test);
             Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd);
             Set_delivery_date(response.data.data.available_courier_companies[0].etd)
             SetPincode(modal_pincode);
+            if(from_sheet){
+              setTimeout(() => {
+                Set_sheetOpen(false);
+              }, 3000);
+            }
           } else {
             window.localStorage.setItem('pincode',pincode_to_test);
             Set_delivery_date(response.data.data.available_courier_companies[0].etd)
@@ -81,11 +86,6 @@ const App = () => {
       } catch(error) {
         console.log(error)
       }
-    // } else {
-    //   document.getElementById('pin-input').focus();
-    //   SetClicked(false);
-    //   SetPincode('');
-    // }
   }
 
   useEffect(()=>{
@@ -104,20 +104,11 @@ const App = () => {
     );
 
     if(pincode){
-      verifyPincodeDeliveribility(pincode,200,false);
       verifyPincodeDeliveribility(modal_pincode,200,true);
+      verifyPincodeDeliveribility(pincode,200,false);
     }
 
   },[]);
-
-
-  // useEffect(()=>{
-  //   SetClicked(false);
-  //   SetModalClicked(false);
-  //   Set_delivery_date('');
-  //   Set_modal_delivery_date('');
-  // },[pincode])
-
 
   return (
     <>
@@ -132,7 +123,7 @@ const App = () => {
         <PincodeSectionMobile pincode_value={pincode}  delivery_date_check={delivery_date} delivery_date_check_modal={modal_delivery_date} status_code_check={modal_status_code}
           modal_pincode={modal_pincode} clicked_check={modal_clicked} link_check={modal_link} SetPincode_check={SetModalPincode} SetClicked_check={SetModalClicked}
           verifyPincodeDeliveribility_check={verifyPincodeDeliveribility} popup_check={true} Set_delivery_date={Set_modal_delivery_date}
-          status_code={status_code} isLoading={isLoading}/>
+          status_code={status_code} isLoading={isLoading} sheetOpen={sheetOpen} Set_sheetOpen={Set_sheetOpen}/>
       </div>
     </div>
     <div>

@@ -397,6 +397,7 @@
     .message-div {
     text-align: center;
     padding: 10px;
+    font-size: 14px;
 }
 
 .pincode-secton-main-container
@@ -451,8 +452,7 @@
     span {
     font-weight: 700;
     font-style: normal;
-    font-size: 16px;
-    line-height: 23.44px;
+    font-size: 14px;
     color: #fff;
 }
 
@@ -525,12 +525,11 @@
     justify-content: center;
 }
 .delivery-image-div{
-    margin-top: 1%;
     margin-right: 2%;
 }
 
-.deliver-image {
-    height: 20px;
+.delivery-image {
+    height: 17px;
     width: 20px;
 }
 
