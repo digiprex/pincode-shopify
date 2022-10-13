@@ -1,201 +1,199 @@
-
-
-.mobile-delivery-details{
-    display: none;
+.mobile-delivery-details {
+  display: none;
 }
 .pincode-secton-main-container {
-    width: 100%;
+  width: 100%;
 }
 
 .pincode-section-container {
-    margin-top: 15px;
-    border-top: solid 1px #C9C9C9;
-    border-bottom: solid 1px #C9C9C9;
+  margin-top: 15px;
+  border-top: solid 1px #c9c9c9;
+  border-bottom: solid 1px #c9c9c9;
 }
 
 .pincode-secton-main-container .cart-body-right .cart-body-right-container {
-    background-color: #fff;
-    box-sizing: border-box;
-    border-radius: 10px;
-    flex: 10;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 10px;
+  flex: 10;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .deliver-details {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .deliver-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
 }
 
 .product__submit__add {
-    width: 100%;
+  width: 100%;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .deliver-details
-    .map-icon {
-    width: 26px;
-    height: 26px;
-    background-color: rgba(254, 130, 118, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 5px;
-    border-radius: 4px;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .deliver-details
+  .map-icon {
+  width: 26px;
+  height: 26px;
+  background-color: rgba(254, 130, 118, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  border-radius: 4px;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .deliver-details
-    .map-icon
-    .fa-map-icon {
-    color: var(--color-dark);
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .deliver-details
+  .map-icon
+  .fa-map-icon {
+  color: var(--color-dark);
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .deliver-details
-    span:nth-child(2) {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 21.09px;
-    color: #000;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .deliver-details
+  span:nth-child(2) {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 21.09px;
+  color: #000;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .deliver-details
-    :last-child
-    span {
-    color: #ea2c2c;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .deliver-details
+  :last-child
+  span {
+  color: #ea2c2c;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 18px;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 34px;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 34px;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .pincode-validation-input {
-    width: 65%;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    box-shadow: none;
-    margin-right: 5%;
-    height: 40px;
-    border-radius: 4px;
-    padding: 9px 16px 9px 0px !important;
-    border-bottom: solid 1px var(--color-dark); ;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .pincode-validation-input {
+  width: 65%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  box-shadow: none;
+  margin-right: 5%;
+  height: 40px;
+  border-radius: 4px;
+  padding: 9px 16px 9px 0px !important;
+  border-bottom: solid 1px var(--color-dark);
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .pincode-validation-input::placeholder {
-    color: #a9a9a9;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .pincode-validation-input::placeholder {
+  color: #a9a9a9;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .pincode-validation-input:focus {
-    border-color: var(--color-dark);
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .pincode-validation-input:focus {
+  border-color: var(--color-dark);
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .submit-button{
-        position: relative;
-        transition-duration: 0.4s;
-        overflow: hidden;
-        background-color: var(--color-light);
-        cursor: not-allowed;
-        border: none;
-    }
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .submit-button {
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  background-color: var(--color-light);
+  cursor: not-allowed;
+  border: none;
+}
 
-    .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .proceed-button{
-        position: relative;
-        transition-duration: 0.4s;
-        overflow: hidden;
-        background-color: var(--color-light);
-        cursor: not-allowed;
-    }
+.pincode-secton-main-container
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .proceed-button {
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  background-color: var(--color-light);
+  cursor: not-allowed;
+}
 
-    .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .proceed-button:after {
-    content: "";
-    background: #FFE8D966;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-    }
+.pincode-secton-main-container
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .proceed-button:after {
+  content: "";
+  background: #ffe8d966;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
 
-    /* .pincode-secton-main-container
+/* .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
@@ -214,8 +212,7 @@
     transition: all 0.8s
     } */
 
-
-    /* .pincode-secton-main-container
+/* .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
@@ -227,8 +224,8 @@
     opacity: 1;
     transition: 0s
     } */
-    
-    /* .pincode-secton-main-container
+
+/* .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
@@ -242,309 +239,306 @@
     } */
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .submit-button,
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .submit-button,
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .proceed-button {
-    height: 34px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .proceed-button {
+  height: 34px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .submit-button{
-        width: 50%;
-        background-color: var(--color-light);
-        border: none;
-    }
-
-.pincode-secton-main-container
-.cart-body-right
-.cart-body-right-container
-.right-upper
-.pincode
-.proceed-button {
-    width: 100%;
-    background-color: var(--color-dark);
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .submit-button {
+  width: 50%;
+  background-color: var(--color-light);
+  border: none;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .submit-button
-    span,
-.pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .proceed-button
-    span {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    color: #fff;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .proceed-button {
+  width: 100%;
+  background-color: var(--color-dark);
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper
-    .pincode
-    .pin-input
-    .submit-button.submit-button-active {
-    background-color: var(--color-dark);
-    cursor: pointer;
-    border: none;
-    height: 34px;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .submit-button
+  span,
+.pincode-secton-main-container
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .proceed-button
+  span {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #fff;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .pincode
-    .estimated-days {
-    margin-top: 18px;
-    display: flex;
-    flex-direction: column;
+  .cart-body-right
+  .cart-body-right-container
+  .right-upper
+  .pincode
+  .pin-input
+  .submit-button.submit-button-active {
+  background-color: var(--color-dark);
+  cursor: pointer;
+  border: none;
+  height: 34px;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .pincode
-    .estimated-days
-    .days-estimation {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: #000;
+  .cart-body-right
+  .cart-body-right-container
+  .pincode
+  .estimated-days {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .pincode
-    .estimated-days
-    .days-estimation.non-servicable-pin {
-    color: #ea2c2c;
+  .cart-body-right
+  .cart-body-right-container
+  .pincode
+  .estimated-days
+  .days-estimation {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .pincode
-    .estimated-days
-    .estimated-days-start {
-    color: red;
-    margin-right: 3px;
+  .cart-body-right
+  .cart-body-right-container
+  .pincode
+  .estimated-days
+  .days-estimation.non-servicable-pin {
+  color: #ea2c2c;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .pincode
-    .estimated-days
-    .estimation-date {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: #00cc6a;
+  .cart-body-right
+  .cart-body-right-container
+  .pincode
+  .estimated-days
+  .estimated-days-start {
+  color: red;
+  margin-right: 3px;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon {
-    width: 100%;
-    height: auto;
-    background-color: #eafff5;
-    border: 1px solid #00cc6a;
-    border-radius: 10px;
-    margin-top: 18px;
+  .cart-body-right
+  .cart-body-right-container
+  .pincode
+  .estimated-days
+  .estimation-date {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #00cc6a;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon
-    .amazon-info {
-    display: flex;
-    flex-direction: column;
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon {
+  width: 100%;
+  height: auto;
+  background-color: #eafff5;
+  border: 1px solid #00cc6a;
+  border-radius: 10px;
+  margin-top: 18px;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon
-    .amazon-info
-    .message-div {
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon
+  .amazon-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon
-    .amazon-info
-    .message-div
-    .serviceable-message {
-    font-weight: 600;
-    font-style: normal;
-    font-size: 14px;
-    color: #000;
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon
+  .amazon-info
+  .message-div {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon
-    .buy-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0 20px 0;
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon
+  .amazon-info
+  .message-div
+  .serviceable-message {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  color: #000;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon
-    .buy-button
-    a {
-    text-decoration: none;
-    width: 262px;
-    height: 40px;
-    background-color: #000;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 3px 0 6px 0;
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon
+  .buy-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 20px 0;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon
-    .buy-button
-    a
-    span {
-    font-weight: 700;
-    font-style: normal;
-    font-size: 14px;
-    color: #fff;
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon
+  .buy-button
+  a {
+  text-decoration: none;
+  width: 262px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 3px 0 6px 0;
 }
 
 .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .available-in-amazon
-    .buy-button
-    a
-    .amazon-logo {
-    width: 49px;
-    height: 18px;
-    margin-left: 6px;
-    margin-top: 12px;
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon
+  .buy-button
+  a
+  span {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  color: #fff;
+}
+
+.pincode-secton-main-container
+  .cart-body-right
+  .cart-body-right-container
+  .available-in-amazon
+  .buy-button
+  a
+  .amazon-logo {
+  width: 49px;
+  height: 18px;
+  margin-left: 6px;
+  margin-top: 12px;
 }
 
 .disable-button {
-    cursor: not-allowed;
-    background-color: var(--color-light) !important;
+  cursor: not-allowed;
+  background-color: var(--color-light) !important;
 }
 
-
 .pincode-popup-main-container {
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.43);
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.43);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
 .pincode-popup-main-container .popup-container {
-    width: 35%;
-    position: relative;
-    border-radius: 10px;
-    background-color: #fff;
+  width: 35%;
+  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
 }
 
 .pincode-popup-main-container
-    .popup-container
-    .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container {
-    box-shadow: none;
-    padding: 0;
+  .popup-container
+  .pincode-secton-main-container
+  .cart-body-right
+  .cart-body-right-container {
+  box-shadow: none;
+  padding: 0;
 }
-
-
 
 .pincode-popup-main-container .popup-container .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.cart-body-right{
-    display: flex;
+.cart-body-right {
+  display: flex;
 }
 
-.delivery-symbol{
-    display: flex;
-    padding-top: 30px;
-    flex:2;
-    justify-content: center;
+.delivery-symbol {
+  display: flex;
+  padding-top: 30px;
+  flex: 2;
+  justify-content: center;
 }
-.delivery-image-div{
-    margin-right: 2%;
+.delivery-image-div {
+  margin-right: 2%;
 }
 
 .delivery-image {
-    height: 17px;
-    width: 20px;
+  height: 17px;
+  width: 20px;
 }
 
-.delivery-image-text{
-    font-size: 14px;
-    color: #777777
+.delivery-image-text {
+  font-size: 14px;
+  color: #777777;
 }
 
 @media only screen and (min-width: 1025px) {
-    .pincode-secton-main-container
+  .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper {
@@ -553,15 +547,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    }
+  }
 }
 
 @media only screen and (max-width: 1025px) {
-    .pincode-popup-main-container .popup-container {
-        width: 40%;
-    }
+  .pincode-popup-main-container .popup-container {
+    width: 40%;
+  }
 
-    .pincode-secton-main-container
+  .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper {
@@ -570,15 +564,15 @@
     align-items: center;
     justify-content: center;
     padding: 30px 0 30px 30px;
-}
+  }
 }
 
 @media only screen and (max-width: 920px) {
-    .pincode-popup-main-container .popup-container {
-        width: 50%;
-    }
+  .pincode-popup-main-container .popup-container {
+    width: 50%;
+  }
 
-    .pincode-secton-main-container
+  .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper {
@@ -587,132 +581,143 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
+  }
 }
 
 @media only screen and (max-width: 780px) {
-    .pincode-popup-main-container .popup-container {
-        width: 75%;
-    }
+  .pincode-popup-main-container .popup-container {
+    width: 75%;
+  }
 
-    .pincode-secton-main-container
+  .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 30px 0;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+  }
 }
 
 @media only screen and (max-width: 580px) {
-    .pincode-popup-main-container .popup-container {
-        width: 90%;
-    }
+  .pincode-popup-main-container .popup-container {
+    width: 90%;
+  }
 
-    .pincode-popup-main-container
-        .popup-container
-        .pincode-secton-main-container
-        .cart-body-right
-        .cart-body-right-container
-        .right-upper
-        .pincode
-        .pin-input {
-        flex-direction: column;
-    }
+  .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
 
-    .pincode-popup-main-container
-        .popup-container
-        .pincode-secton-main-container
-        .cart-body-right
-        .cart-body-right-container
-        .right-upper
-        .pincode
-        .pin-input
-        .pincode-validation-input {
-        width: 100%;
-        margin-right: 0;
-    }
-
-    .pincode-popup-main-container
-        .popup-container
-        .pincode-secton-main-container
-        .cart-body-right
-        .cart-body-right-container
-        .right-upper
-        .pincode
-        .pin-input
-        .submit-button {
-        width: 100%;
-        margin-top: 20px;
-        border: none;
-    }
-
-    .delivery-symbol {
-        display: none;
-    }
-
+  .pincode-popup-main-container
+    .popup-container
     .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
-    .deliver-details {
-        /* display: none; */
-    }
+    .pincode
+    .pin-input {
+    flex-direction: column;
+  }
 
-    /* .pincode .estimated-days {
-        display: none;
-    } */
-
-    /* #pin-input {
-        display: none;
-    } */
-
-    .mobile-delivery-details{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .estimation-date{
-        color: #00cc6a;
-        font-size: 14px;
-    }
-
-    .days-estimation{
-        font-size: 14px;
-    }
-
-    .delivery-details-mobile{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .pincode-secton-main-container
-    .cart-body-right
-    .cart-body-right-container
-    .right-upper {
-        padding-top: 0px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
+  .pincode-popup-main-container
+    .popup-container
     .pincode-secton-main-container
     .cart-body-right
     .cart-body-right-container
     .right-upper
     .pincode
     .pin-input
-    .submit-button{
-        width: 40%;
-        background-color: var(--color-light);
-        border: none;
-    }
+    .pincode-validation-input {
+    width: 100%;
+    margin-right: 0;
+  }
 
-    .pincode-popup-container{
-        padding: 30px;
-    }
+  .pincode-popup-main-container
+    .popup-container
+    .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .submit-button {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+  }
+
+  .delivery-symbol {
+    display: none;
+  }
+
+  .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .deliver-details {
+    /* display: none; */
+  }
+
+  /* .pincode .estimated-days {
+        display: none;
+    } */
+
+  /* #pin-input {
+        display: none;
+    } */
+
+  .mobile-delivery-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .estimation-date {
+    color: #00cc6a;
+    font-size: 14px;
+  }
+
+  .days-estimation {
+    font-size: 14px;
+  }
+
+  .delivery-details-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper {
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pincode-secton-main-container
+    .cart-body-right
+    .cart-body-right-container
+    .right-upper
+    .pincode
+    .pin-input
+    .submit-button {
+    width: 40%;
+    background-color: var(--color-light);
+    border: none;
+  }
+
+  .pincode-popup-container {
+    padding: 30px;
+  }
 }
