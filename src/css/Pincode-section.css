@@ -62,7 +62,6 @@
     .right-upper
     .deliver-details
     span:nth-child(2) {
-    font-family: "Harmonia Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
@@ -154,6 +153,7 @@
         overflow: hidden;
         background-color: var(--color-light);
         cursor: not-allowed;
+        border: none;
     }
 
     .pincode-secton-main-container
@@ -253,7 +253,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    border: none;
 }
 
 .pincode-secton-main-container
@@ -265,6 +265,7 @@
     .submit-button{
         width: 30%;
         background-color: var(--color-light);
+        border: none;
     }
 
 .pincode-secton-main-container
@@ -292,7 +293,6 @@
     .pincode
     .proceed-button
     span {
-    font-family: "Harmonia Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 16px;
@@ -308,6 +308,7 @@
     .submit-button.submit-button-active {
     background-color: var(--color-dark);
     cursor: pointer;
+    border: none;
 }
 
 .pincode-secton-main-container
@@ -326,7 +327,6 @@
     .pincode
     .estimated-days
     .days-estimation {
-    font-family: "Harmonia Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
@@ -359,7 +359,6 @@
     .pincode
     .estimated-days
     .estimation-date {
-    font-family: "Harmonia Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
@@ -640,6 +639,7 @@
         .submit-button {
         width: 100%;
         margin-top: 20px;
+        border: none;
     }
 
     .delivery-symbol {
@@ -696,5 +696,6 @@
     .submit-button{
         width: 40%;
         background-color: var(--color-light);
+        border: none;
     }
 }

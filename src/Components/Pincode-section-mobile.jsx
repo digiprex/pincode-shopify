@@ -48,7 +48,7 @@ const PincodeSection = ({
 
 	const closeSheet = () => {
 		Set_sheetOpen(false);
-    if(status_code_check == 200){
+    if(status_code_check == 200 && clicked_check){
       verifyPincodeDeliveribility_check(modal_pincode,200,false);
     }
  	}
@@ -107,7 +107,7 @@ const PincodeSection = ({
                     </div>
                 }
                 </div>
-                <div
+                <button
                   className="submit-button submit-button-active"
                   id="pincode-submit-1"
                   onClick={() => {
@@ -115,7 +115,7 @@ const PincodeSection = ({
                   }}
                 >
                   <span>{buttonName}</span>
-                </div>
+                </button>
               </div>
             </div>
           </div>
