@@ -61,10 +61,11 @@ const App = () => {
           Set_status_code(response.data.status);
         }
         if(response.data.status == "200") {
+          let delivery_date_array = response.data.data.available_courier_companies; 
           if(popup_check){
             window.localStorage.setItem('pincode',pincode_to_test);
-            Set_modal_delivery_date(response.data.data.available_courier_companies[0].etd);
-            Set_delivery_date(response.data.data.available_courier_companies[0].etd)
+            Set_modal_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd);
+            Set_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd)
             SetPincode(modal_pincode);
             if(from_sheet){
               setTimeout(() => {
@@ -73,7 +74,7 @@ const App = () => {
             }
           } else {
             window.localStorage.setItem('pincode',pincode_to_test);
-            Set_delivery_date(response.data.data.available_courier_companies[0].etd)
+            Set_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd)
           }
         } else {
           if(popup_check) {
