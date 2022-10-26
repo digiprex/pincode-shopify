@@ -107,6 +107,7 @@ const PincodeSection = ({
                     onClick={() => {
                       if (!clicked) {
                         if (navigator.onLine) {
+                          Set_online(true);
                           Set_clicked((prevState) => !prevState);
                           verifyPincodeDeliveribility_check(
                             pincode_value,
@@ -121,6 +122,7 @@ const PincodeSection = ({
                         SetPincode_check("");
                         Set_delivery_date("");
                         document.getElementById("pin-input").focus();
+                        Set_online(true);
                       }
                     }}
                     disabled={pincode_value < 100000 || isLoading}
