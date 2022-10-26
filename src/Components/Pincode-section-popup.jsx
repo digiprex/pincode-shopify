@@ -36,8 +36,8 @@ const PincodeSection = ({
   }, []);
 
   const isValidInput = (e) => {
-    if (e.keyCode === 13) {
-      document.getElementById("pincode-submit").click();
+    if (e.keyCode == 13) {
+      document.getElementById("pincode-submit-mobile").click();
     }
 
     let x = e.which || e.keyCode;
@@ -95,7 +95,7 @@ const PincodeSection = ({
                         ? "submit-button submit-button-active"
                         : "submit-button"
                     }
-                    id="pincode-submit"
+                    id="pincode-submit-mobile"
                     onClick={() => {
                       if (!clicked) {
                         Set_clicked((prevState) => !prevState);

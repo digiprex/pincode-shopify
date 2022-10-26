@@ -115,6 +115,7 @@ const PincodeSection = ({
                         Set_clicked((prevState) => !prevState);
                         SetPincode_check("");
                         Set_delivery_date("");
+                        document.getElementById("pin-input").focus();
                       }
                     }}
                     disabled={pincode_value < 100000 || isLoading}

@@ -1,3 +1,7 @@
+[data-rsbs-backdrop], [data-rsbs-overlay], [data-rsbs-root]:after {
+  z-index: 1000 !important;
+}
+
 .mobile-delivery-details {
   display: none;
 }
