@@ -21,6 +21,7 @@ const PincodeSection = ({
   const [clicked, Set_clicked] = useState(false);
   const [buttonName, Set_buttonName] = useState("Submit");
   const [brand, Set_brand] = useState("");
+  const [online,Set_online] = useState(true);
 
   useEffect(() => {
     const buttonChangedName = clicked ? "Change" : "Submit";
@@ -98,17 +99,22 @@ const PincodeSection = ({
                     id="pincode-submit-mobile"
                     onClick={() => {
                       if (!clicked) {
-                        Set_clicked((prevState) => !prevState);
-                        verifyPincodeDeliveribility_check(
-                          modal_pincode,
-                          status_code_check,
-                          true,
-                          true
-                        );
+                        if(navigator.onLine){
+                          Set_clicked((prevState) => !prevState);
+                          verifyPincodeDeliveribility_check(
+                            modal_pincode,
+                            status_code_check,
+                            true,
+                            true
+                          );
+                        } else {
+                          Set_online(false);
+                        }
                       } else {
                         Set_clicked((prevState) => !prevState);
                         SetPincode_check("");
                         Set_delivery_date("");
+                        document.getElementById("pin-input").focus();
                       }
                     }}
                     disabled={modal_pincode<100000 || isLoading}
@@ -122,6 +128,8 @@ const PincodeSection = ({
                     )}
                   </button>
                 </div>
+                {online ? (
+                  <div>
                 {!isLoading ? (
                   <div>
                     {modal_pincode > 100000 &&
@@ -141,11 +149,22 @@ const PincodeSection = ({
                       )}
                   </div>
                 ) : null}
-
+                 </div>
+                ) : (
+                  <div className="estimated-days">
+                    <div style={{ display: "flex" }}>
+                      <div className="days-estimation">
+                        Something went wrong...
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {/* { (popup_check && status_code_check_check == '200') ? 
                      <div className="proceed-button" onClick={() => redirect()}>
                       <span>Proceed</span>
                     </div> : null } */}
+                {/* {online ? (
+                  <div> */}
                 {!isLoading ? (
                   <div>
                     {modal_pincode > 100000 &&
@@ -186,7 +205,17 @@ const PincodeSection = ({
                       )}
                   </div>
                 ) : null}
-              </div>
+                </div>
+              {/* //   ) : (
+              //     <div className="estimated-days">
+              //       <div style={{ display: "flex" }}>
+              //         <div className="days-estimation">
+              //           Something went wrong...
+              //         </div>
+              //       </div>
+              //     </div>
+              //   )}
+              // </div> */}
             </div>
           </div>
         </div>
