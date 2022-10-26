@@ -85,7 +85,7 @@ const PincodeSection = ({
                             <div className="estimated-days-mobile">
                               <div style={{ display: "flex" }}>
                                 <div className="days-estimation">
-                                  Find a partner that delivers to you
+                                  CHECK DELIVERY TIME
                                 </div>
                               </div>
                             </div>
