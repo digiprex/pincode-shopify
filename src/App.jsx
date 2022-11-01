@@ -45,7 +45,7 @@ const App = () => {
   
       let config = {
         method: 'post',
-        url: `${process.env.REACT_APP_GET_DELIVERY_DETAILS_URL}/pincode/checkPincode`,
+        url: `${process.env.REACT_APP_GET_DELIVERY_DETAILS_URL}/device/pincode`,
         headers: { 
           'Content-Type': 'application/json'
         },
