@@ -54,18 +54,23 @@ const App = () => {
   
       try{
         const response = await axios(config);
+        console.log(response,'response');
         Set_isLoading(false);
+        console.log(popup_check,'popup check');
         if(popup_check){
-          Set_modal_status_code(response.data.status);
+          console.log('in popup check if');
+          Set_modal_status_code(response.data.message.status);
         } else {
-          Set_status_code(response.data.status);
+          console.log('in popup check else');
+          Set_status_code(response.data.message.status);
         }
-        if(response.data.status == "200") {
-          let delivery_date_array = response.data.data.available_courier_companies; 
+        if(response.data.message.status == 200) {
+          console.log('in 200');
+          let delivery_date_array = response.data.message.data.available_courier_companies; 
           if(popup_check){
             window.localStorage.setItem('pincode',pincode_to_test);
-            Set_modal_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd);
-            Set_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd)
+            Set_modal_delivery_date(response.data.message.data.available_courier_companies[delivery_date_array.length-1].etd);
+            Set_delivery_date(response.data.message.data.available_courier_companies[delivery_date_array.length-1].etd)
             SetPincode(modal_pincode);
             if(from_sheet){
               setTimeout(() => {
@@ -74,17 +79,18 @@ const App = () => {
             }
           } else {
             window.localStorage.setItem('pincode',pincode_to_test);
-            Set_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd)
+            Set_delivery_date(response.data.message.data.available_courier_companies[delivery_date_array.length-1].etd);
           }
         } else {
+          console.log('in 404');
           if(popup_check) {
-            Set_modal_link(response.data.link);
+            Set_modal_link(response.data.message.link);
           } else {
-            Set_link(response.data.link);
+            Set_link(response.data.message.link);
           }
         }
       } catch(error) {
-        console.log(error)
+        console.log(error);
       }
   }
 
