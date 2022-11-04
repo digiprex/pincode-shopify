@@ -148,7 +148,7 @@ const PincodeSection = ({
                                   <span className="estimation-date">
                                     {" "}
                                     {delivery_date_check}{" "}
-                                  </span>
+                                  </span> working days
                                 </div>
                               </div>
                             </div>

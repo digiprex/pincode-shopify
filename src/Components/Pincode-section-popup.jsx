@@ -140,11 +140,11 @@ const PincodeSection = ({
                         <div className="estimated-days">
                           <div style={{ display: "flex" }}>
                             <div className="days-estimation">
-                              Free delivery by{" "}
+                            Free delivery by
                               <span className="estimation-date">
                                 {" "}
                                 {delivery_date_check_modal}{" "}
-                              </span>
+                              </span> working days
                             </div>
                           </div>
                         </div>
