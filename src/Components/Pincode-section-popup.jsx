@@ -156,7 +156,7 @@ const PincodeSection = ({
                   <div className="estimated-days">
                     <div style={{ display: "flex" }}>
                       <div className="days-estimation">
-                        Something went wrong...
+                        Something went wrong... please try again later
                       </div>
                     </div>
                   </div>
