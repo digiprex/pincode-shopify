@@ -85,7 +85,7 @@ const PincodeSection = ({
                             <div className="estimated-days-mobile">
                               <div style={{ display: "flex" }}>
                                 <div className="days-estimation">
-                                  CHECK DELIVERY DATE
+                                  Check Delivery Date:
                                 </div>
                               </div>
                             </div>
