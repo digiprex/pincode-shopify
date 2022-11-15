@@ -96,18 +96,6 @@ const PincodeSection = ({
                         ? "submit-button submit-button-active"
                         : "submit-button"
                     }
-<<<<<<< Updated upstream
-                    id="pincode-submit"
-                    onClick={() => {
-                      if (!clicked) {
-                        Set_clicked((prevState) => !prevState);
-                        verifyPincodeDeliveribility_check(
-                          modal_pincode,
-                          status_code_check,
-                          true,
-                          true
-                        );
-=======
                     id={`pincode-submit-mobile-${process.env.REACT_APP_BRAND}`}
                     onClick={() => {
                       if (!clicked) {
@@ -124,7 +112,6 @@ const PincodeSection = ({
                         } else {
                           Set_online(false);
                         }
->>>>>>> Stashed changes
                       } else {
                         Set_clicked((prevState) => !prevState);
                         SetPincode_check("");

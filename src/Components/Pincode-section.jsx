@@ -106,14 +106,6 @@ const PincodeSection = ({
                     id={`pincode-submit-web-${process.env.REACT_APP_BRAND}`}
                     onClick={() => {
                       if (!clicked) {
-<<<<<<< Updated upstream
-                        Set_clicked((prevState) => !prevState);
-                        verifyPincodeDeliveribility_check(
-                          pincode_value,
-                          status_code_check,
-                          false
-                        );
-=======
                         posthog.capture(`pincode-submit-web-${process.env.REACT_APP_BRAND}`, { property: `pincode-submit-web-${process.env.REACT_APP_BRAND}` })
                         if (navigator.onLine) {
                           Set_online(true);
@@ -126,7 +118,6 @@ const PincodeSection = ({
                         } else {
                           Set_online(false);
                         }
->>>>>>> Stashed changes
                       } else {
                         Set_clicked((prevState) => !prevState);
                         SetPincode_check("");
