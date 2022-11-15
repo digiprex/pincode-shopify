@@ -5,6 +5,7 @@ import axios from "axios";
 import PincodeSection from './Components/Pincode-section';
 import PincodeSectionMobile from './Components/Pincode-section-mobile';
 import "react-spring-bottom-sheet/dist/style.css";
+import posthog from 'posthog-js';
 
 const App = () => {
   const [pincode,Set_pincode] =  useState(window.localStorage.getItem('pincode') || "");
@@ -89,7 +90,7 @@ const App = () => {
   }
 
   useEffect(()=>{
-
+    posthog.init(process.env.REACT_APP_POSTHOG_KEY, { api_host: 'https://app.posthog.com' })
     document.documentElement.style.setProperty(
       "--color-dark",
       process.env.REACT_APP_COLOR_DARK

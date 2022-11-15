@@ -1,4 +1,5 @@
 import "../css/Pincode-section.css";
+import posthog from 'posthog-js'
 import PincodeSectionPopup from "./Pincode-section-popup";
 import { BottomSheet } from "react-spring-bottom-sheet";
 import "react-spring-bottom-sheet/dist/style.css";
@@ -95,8 +96,9 @@ const PincodeSection = ({
                     </div>
                     <button
                       className="submit-button submit-button-active"
-                      id="pincode-submit-1"
+                      id={`pincode-check-mobile-${process.env.REACT_APP_BRAND}`}
                       onClick={() => {
+                        posthog.capture(`pincode-check-mobile-${process.env.REACT_APP_BRAND}`, { property:`pincode-check-mobile-${process.env.REACT_APP_BRAND}` })
                         Set_sheetOpen(true);
                       }}
                     >
