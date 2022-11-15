@@ -22,6 +22,7 @@ const PincodeSection = ({
   const [clicked, Set_clicked] = useState(false);
   const [buttonName, Set_buttonName] = useState("Submit");
   const [brand, Set_brand] = useState("");
+  const [online,Set_online] = useState(true);
 
   useEffect(() => {
     const buttonChangedName = clicked ? "Change" : "Submit";
@@ -37,8 +38,8 @@ const PincodeSection = ({
   }, []);
 
   const isValidInput = (e) => {
-    if (e.keyCode === 13) {
-      document.getElementById("pincode-submit").click();
+    if (e.keyCode == 13) {
+      document.getElementById("pincode-submit-mobile").click();
     }
 
     let x = e.which || e.keyCode;
@@ -116,6 +117,8 @@ const PincodeSection = ({
                         Set_clicked((prevState) => !prevState);
                         SetPincode_check("");
                         Set_delivery_date("");
+                        document.getElementById("pin-input").focus();
+                        Set_online(true);
                       }
                     }}
                     disabled={modal_pincode<100000 || isLoading}
@@ -129,6 +132,8 @@ const PincodeSection = ({
                     )}
                   </button>
                 </div>
+                {online ? (
+                  <div>
                 {!isLoading ? (
                   <div>
                     {modal_pincode > 100000 &&
@@ -137,7 +142,7 @@ const PincodeSection = ({
                         <div className="estimated-days">
                           <div style={{ display: "flex" }}>
                             <div className="days-estimation">
-                              Free delivery by{" "}
+                            Free delivery by
                               <span className="estimation-date">
                                 {" "}
                                 {delivery_date_check_modal}{" "}
@@ -148,11 +153,22 @@ const PincodeSection = ({
                       )}
                   </div>
                 ) : null}
-
+                 </div>
+                ) : (
+                  <div className="estimated-days">
+                    <div style={{ display: "flex" }}>
+                      <div className="days-estimation">
+                        Something went wrong... please try again later
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {/* { (popup_check && status_code_check_check == '200') ? 
                      <div className="proceed-button" onClick={() => redirect()}>
                       <span>Proceed</span>
                     </div> : null } */}
+                {/* {online ? (
+                  <div> */}
                 {!isLoading ? (
                   <div>
                     {modal_pincode > 100000 &&
@@ -193,7 +209,17 @@ const PincodeSection = ({
                       )}
                   </div>
                 ) : null}
-              </div>
+                </div>
+              {/* //   ) : (
+              //     <div className="estimated-days">
+              //       <div style={{ display: "flex" }}>
+              //         <div className="days-estimation">
+              //           Something went wrong...
+              //         </div>
+              //       </div>
+              //     </div>
+              //   )}
+              // </div> */}
             </div>
           </div>
         </div>

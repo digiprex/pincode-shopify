@@ -27,6 +27,7 @@ const PincodeSection = ({
   const [clicked, Set_clicked] = useState(false);
   const [buttonName, Set_buttonName] = useState("Submit");
   const [brand, Set_brand] = useState("");
+  const [online, Set_online] = useState(true);
 
   useEffect(() => {
     const buttonChangedName = pincode_value ? "Change" : "Submit";
@@ -122,12 +123,12 @@ const PincodeSection = ({
                         Set_clicked((prevState) => !prevState);
                         SetPincode_check("");
                         Set_delivery_date("");
+                        document.getElementById("pin-input").focus();
+                        Set_online(true);
                       }
                     }}
                     disabled={pincode_value < 100000 || isLoading}
                   >
-                    {/* {(clicked_check && pincode_value.length==6)?  */}
-                    {/* <span>Change</span> :  */}
                     {!isLoading ? (
                       <span>{buttonName}</span>
                     ) : (
@@ -135,69 +136,96 @@ const PincodeSection = ({
                     )}
                   </button>
                 </div>
-                {!isLoading ? (
+                {online ? (
                   <div>
-                    {pincode_value > 100000 && clicked && status_code == "200" && (
-                      <div className="estimated-days">
-                        <div style={{ display: "flex" }}>
-                          <div className="days-estimation">
-                            Free delivery by{" "}
-                            <span className="estimation-date">
-                              {" "}
-                              {delivery_date_check}{" "}
-                            </span>
-                          </div>
-                        </div>
+                    {!isLoading ? (
+                      <div>
+                        {pincode_value > 100000 &&
+                          clicked &&
+                          status_code == "200" && (
+                            <div className="estimated-days">
+                              <div style={{ display: "flex" }}>
+                                <div className="days-estimation">
+                                  Free delivery by{" "}
+                                  <span className="estimation-date">
+                                    {" "}
+                                    {delivery_date_check}{" "}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          )}
                       </div>
-                    )}
+                    ) : null}
                   </div>
-                ) : null}
+                ) : (
+                  <div className="estimated-days">
+                    <div style={{ display: "flex" }}>
+                      <div className="days-estimation">
+                        Something went wrong... please try again later
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* { (popup_check && status_code_check == '200') ? 
                      <div className="proceed-button" onClick={() => redirect()}>
                       <span>Proceed</span>
                     </div> : null } */}
-                {!isLoading ? (
-                  <div>
-                    {pincode_value > 100000 &&
-                      clicked &&
-                      status_code_check == "404" && (
-                        <div>
-                          <div className="estimated-days">
-                            <div style={{ display: "flex" }}>
-                              <div className="days-estimation non-servicable-pin">
-                                We are currently not operating in this location.
-                                Try another pincode.
+
+                {/* {online ? (
+                  <div> */}
+                    {!isLoading ? (
+                      <div>
+                        {pincode_value > 100000 &&
+                          clicked &&
+                          status_code_check == "404" && (
+                            <div>
+                              <div className="estimated-days">
+                                <div style={{ display: "flex" }}>
+                                  <div className="days-estimation non-servicable-pin">
+                                    We are currently not operating in this
+                                    location. Try another pincode.
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="available-in-amazon">
+                                <div className="amazon-info">
+                                  <div className="message-div">
+                                    But you can buy our products from {brand} by
+                                    GHC store on Amazon
+                                  </div>
+                                  <div className="buy-button">
+                                    <a
+                                      href={link_check}
+                                      rel="noopener noreferrer"
+                                      target="_blank"
+                                    >
+                                      <span>Buy Now on </span>
+                                      <img
+                                        src={Amazon}
+                                        alt="amazon logo"
+                                        className="amazon-logo"
+                                      />
+                                    </a>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="available-in-amazon">
-                            <div className="amazon-info">
-                              <div className="message-div">
-                                But you can buy our products from {brand} by GHC
-                                store on Amazon
-                              </div>
-                              <div className="buy-button">
-                                <a
-                                  href={link_check}
-                                  rel="noopener noreferrer"
-                                  target="_blank"
-                                >
-                                  <span>Buy Now on </span>
-                                  <img
-                                    src={Amazon}
-                                    alt="amazon logo"
-                                    className="amazon-logo"
-                                  />
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
+                          )}
+                      </div>
+                    ) : null}
                   </div>
-                ) : null}
-              </div>
+                {/* ) : (
+                  <div className="estimated-days">
+                    <div style={{ display: "flex" }}>
+                      <div className="days-estimation">
+                        Something went wrong...
+                      </div>
+                    </div>
+                  </div>
+                )} */}
+              {/* </div> */}
             </div>
           </div>
         </div>

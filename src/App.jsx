@@ -46,7 +46,7 @@ const App = () => {
   
       let config = {
         method: 'post',
-        url: `${process.env.REACT_APP_GET_DELIVERY_DETAILS_URL}/pincode/checkPincode`,
+        url: `${process.env.REACT_APP_GET_DELIVERY_DETAILS_URL}/device/pincode`,
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -57,16 +57,16 @@ const App = () => {
         const response = await axios(config);
         Set_isLoading(false);
         if(popup_check){
-          Set_modal_status_code(response.data.status);
+          Set_modal_status_code(response.data.message.status);
         } else {
-          Set_status_code(response.data.status);
+          Set_status_code(response.data.message.status);
         }
-        if(response.data.status == "200") {
-          let delivery_date_array = response.data.data.available_courier_companies; 
+        if(response.data.message.status == 200) {
+          let delivery_date_array = response.data.message.data.available_courier_companies; 
           if(popup_check){
             window.localStorage.setItem('pincode',pincode_to_test);
-            Set_modal_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd);
-            Set_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd)
+            Set_modal_delivery_date(response.data.message.data.available_courier_companies[delivery_date_array.length-1].etd);
+            Set_delivery_date(response.data.message.data.available_courier_companies[delivery_date_array.length-1].etd)
             SetPincode(modal_pincode);
             if(from_sheet){
               setTimeout(() => {
@@ -75,17 +75,17 @@ const App = () => {
             }
           } else {
             window.localStorage.setItem('pincode',pincode_to_test);
-            Set_delivery_date(response.data.data.available_courier_companies[delivery_date_array.length-1].etd)
+            Set_delivery_date(response.data.message.data.available_courier_companies[delivery_date_array.length-1].etd);
           }
         } else {
           if(popup_check) {
-            Set_modal_link(response.data.link);
+            Set_modal_link(response.data.message.link);
           } else {
-            Set_link(response.data.link);
+            Set_link(response.data.message.link);
           }
         }
       } catch(error) {
-        console.log(error)
+        console.log(error);
       }
   }
 
