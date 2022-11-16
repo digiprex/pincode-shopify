@@ -1,4 +1,5 @@
 import "../css/Pincode-section.css";
+import posthog from 'posthog-js'
 import Amazon from "../images/amazon.png";
 import delivery_mars from "../images/truck_mars.png";
 import delivery_saturn from "../images/truck_saturn.png";
@@ -103,9 +104,10 @@ const PincodeSection = ({
                         ? "submit-button submit-button-active"
                         : "submit-button"
                     }
-                    id="pincode-submit"
+                    id={`pincode-submit-web-${process.env.REACT_APP_BRAND}`}
                     onClick={() => {
                       if (!clicked) {
+                        posthog.capture(`pincode-submit-web-${process.env.REACT_APP_BRAND}`, { property: `pincode-submit-web-${process.env.REACT_APP_BRAND}` })
                         if (navigator.onLine) {
                           Set_online(true);
                           Set_clicked((prevState) => !prevState);
