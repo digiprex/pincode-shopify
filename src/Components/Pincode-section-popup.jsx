@@ -39,7 +39,7 @@ const PincodeSection = ({
 
   const isValidInput = (e) => {
     if (e.keyCode == 13) {
-      document.getElementById("pincode-submit-mobile").click();
+      document.getElementById(`pincode-submit-mobile-${process.env.REACT_APP_BRAND}`).click();
     }
 
     let x = e.which || e.keyCode;
